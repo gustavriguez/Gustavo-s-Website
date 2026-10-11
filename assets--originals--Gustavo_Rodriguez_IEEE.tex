@@ -1,0 +1,69 @@
+\documentclass[9pt]{article}
+\usepackage[letterpaper,margin=0.40in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\pagenumbering{gobble}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.6pt,topsep=0.8pt,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\bfseries\large\scshape}{}{0pt}{}[\vspace{-3pt}\hrule]
+\titlespacing*{\section}{0pt}{3.5pt}{2pt}
+\newcommand{\role}[4]{\textbf{#1}\hfill #2\\\textit{#3}\hfill \textit{#4}\\[-2pt]}
+\hypersetup{pdfauthor={Gustavorodriguezpc},pdftitle={Gustavo Rodriguez - General Engineering Resume},pdfsubject={Mechanical Engineering Resume},pdfcreator={Gustavorodriguezpc}}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Gustavo Rodriguez}\\[2pt]
+Mechanical Engineering Student \textbar{} Expected Graduation: December 2028\\
+Tampa, FL \textbar{} 813-393-6432 \textbar{} \href{mailto:gustavorodriguez@usf.edu}{gustavorodriguez@usf.edu} \textbar{} \href{https://www.linkedin.com/in/gustavo33}{linkedin.com/in/gustavo33}
+\end{center}
+\vspace{-5pt}
+
+\section{Research \& Engineering Leadership}
+\role{IEEE EXO, University of South Florida}{Tampa, FL}{EXO Project Lead / Chair}{August 2025 -- Present}
+\begin{itemize}
+\item Lead a multidisciplinary lower-limb exoskeleton program spanning mechanical design, electrical, controls, research, fabrication, testing, safety, procurement, and technical documentation.
+\item Define requirements for a unilateral hip/knee assistive prototype using AK80-9 actuators, IMUs, encoders, Jetson Orin Nano, and Teensy 4.1; perform OpenSim gait comparisons across healthy, hemiparetic, and SHIA datasets to support assistance timing, torque targets, and validation planning.
+\item Coordinate EXO chair responsibilities with the IEEE board, including technical/member events, workshops, recruiting, career-fair and employer outreach, sponsor/industry communication, budgets, meeting logistics, and cross-team scheduling.
+\end{itemize}
+
+\role{CARRT Lab, University of South Florida}{Tampa, FL}{REU Research Assistant}{August 2026 -- Present}
+\begin{itemize}
+\item Analyze IMU and Vicon motion-capture data and support experimental setup, participant data collection, sensor validation, post-processing, data-quality review, and technical documentation for human-motion research.
+\item Develop a modular ESP32/IMU sensor for rugby lineout motion capture; designed a SolidWorks ankle/thigh enclosure reduced from 80 x 60 mm to 43 x 32 mm (71.3\% smaller footprint), with ventilation and integrated adjustable strap slots to avoid reliance on athletic tape or sleeves. Helped validate the PCB and supported compact PCB/layout integration.
+\end{itemize}
+
+\section{Engineering Experience}
+\role{Lonza}{Tampa, FL}{Reliability Engineering Intern}{August 2026 -- December 2026}
+\begin{itemize}
+\item Investigate recurring Xcelodose 600S and microbalance failures through physical inspection, mechanical alignment, spring/load-cell geometry, corner-load behavior, SOP-to-practice comparison, 6M, Gemba, and failure-mode analysis.
+\end{itemize}
+\role{Lonza}{Tampa, FL}{Facilities, Engineering \& Maintenance Intern}{May 2026 -- August 2026}
+\begin{itemize}
+\item Led a Lean/5S asset-identification improvement that reduced representative equipment search time from about 9 minutes to 1.5 minutes (83\%).
+\item Built Power Apps/Power Automate/SharePoint workflows for maintenance and manufacturing traceability, including guided request intake and structured run/status tracking.
+\end{itemize}
+
+\section{Technical Skills \& Credentials}
+\textbf{Engineering:} SolidWorks 2025, CAD/assembly modeling, drawing/specification review, FDM 3D printing, RCA/FMEA, equipment validation\\
+\textbf{Software / Hardware:} MATLAB, OpenSim, Python, Excel, Power Apps, Power Automate, SharePoint, Arduino/ESP32, Jetson/Teensy, IMUs, sensors and actuators\\
+\textbf{PCB / Electronics:} Altium PCB Design coursework and Altium Education certificate in progress; IEEE Altium PCB design workshops; PCB validation/integration support\\
+\textbf{Credentials:} Lean Six Sigma Yellow Belt; CSWA CAD Design; CSWA Sustainability; ReCF Pre-Engineering \& Robotics; CITI Biomedical / Research Integrity
+
+\section{Selected Technical Projects}
+\textbf{SMURF -- Maintenance Request System} \textbar{} Power Apps, Power Automate, SharePoint\\[-2pt]
+\begin{itemize}
+\item Built a two-app maintenance workflow with structured condition questions, automated urgency determination, HTML notifications/reminders, assignment/status tracking, and searchable records.
+\end{itemize}
+\textbf{Mime Robotic Hand} \textbar{} Python, MediaPipe, ESP32, PCA9685, Servo Control\\[-2pt]
+\begin{itemize}
+\item Integrated computer vision with an open-source 5-DOF tendon-driven hand; developed calibration, mapping, smoothing/hysteresis, reverse-servo logic, and interactive control modes.
+\end{itemize}
+
+\section{Education}
+\role{University of South Florida}{Tampa, FL}{B.S. Mechanical Engineering, GPA: 3.33}{Expected December 2028}
+Coursework: Dynamics, Mechanics of Solids, Thermodynamics, Materials Engineering, Electrical Systems, CAD \& Engineering, PCB Design / Altium.
+\end{document}
