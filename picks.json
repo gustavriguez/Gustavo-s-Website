@@ -1,0 +1,74 @@
+{
+  "updated": "2026-10-09",
+  "status": "building things",
+  "music": [
+    {
+      "title": "Autechre - Amber (Full Album)",
+      "url": "https://youtu.be/yIyVEJd0fNc?si=pbxWxcEo8Am6soKs",
+      "note": "Ambient Electronicas best duo",
+      "date": "2026-10-09"
+    }
+  ],
+  "films": [
+    {
+      "title": "Manhunter (1986)",
+      "url": "https://youtu.be/Nbpk0pv60DE?si=ANhLJcs6mdTRZVtN",
+      "note": "Great 80's Michael Mann, beautiful oldschool Synthwave and detective work go hand in hand.",
+      "date": "2026-10-09"
+    }
+  ],
+  "library": [
+    {
+      "id": "trainspotting",
+      "title": "Trainspotting",
+      "year": 1996,
+      "imageUrl": "https://www.impawards.com/1996/posters/trainspotting_ver3_xlg.jpg",
+      "source": "https://www.impawards.com/1996/trainspotting_ver3.html",
+      "trailer": "https://www.youtube.com/watch?v=pehVTRDTe7Q",
+      "trailerSource": "https://www.miramax.com/movie/trainspotting/",
+      "image": "assets/films/trainspotting.webp",
+      "full": "assets/films/trainspotting-large.webp",
+      "width": 1013,
+      "height": 1500
+    },
+    {
+      "id": "magnolia",
+      "title": "Magnolia",
+      "year": 1999,
+      "imageUrl": "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/189/2021/11/16144536/61w1T3ho22L._AC_SY741_.jpg",
+      "source": "https://studios.wearebraindead.com/movies/magnolia/",
+      "trailer": "https://www.youtube.com/watch?v=KnamcFv_N9Q",
+      "trailerSource": "https://www.youtube.com/watch?v=KnamcFv_N9Q",
+      "image": "assets/films/magnolia.webp",
+      "full": "assets/films/magnolia-large.webp",
+      "width": 485,
+      "height": 741
+    },
+    {
+      "id": "speed-racer",
+      "title": "Speed Racer",
+      "year": 2008,
+      "imageUrl": "https://www.impawards.com/2008/posters/speed_racer_xlg.jpg",
+      "source": "https://www.impawards.com/2008/speed_racer.html",
+      "trailer": "https://www.youtube.com/watch?v=SeZoc98nZXQ",
+      "trailerSource": "https://studios.wearebraindead.com/movies/speed-racer/",
+      "image": "assets/films/speed-racer.webp",
+      "full": "assets/films/speed-racer-large.webp",
+      "width": 1013,
+      "height": 1500
+    },
+    {
+      "id": "hundreds-of-beavers",
+      "title": "Hundreds of Beavers",
+      "year": 2022,
+      "imageUrl": "https://dx35vtwkllhj9.cloudfront.net/srh-agency/hundreds-of-beavers/images/regions/us/updates/onesheet.jpg",
+      "source": "https://www.hundredsofbeavers.com/",
+      "trailer": "https://www.youtube.com/watch?v=5h4P-26kHAw",
+      "trailerSource": "https://www.youtube.com/watch?v=5h4P-26kHAw",
+      "image": "assets/films/hundreds-of-beavers.webp",
+      "full": "assets/films/hundreds-of-beavers-large.webp",
+      "width": 1050,
+      "height": 1551
+    }
+  ]
+}

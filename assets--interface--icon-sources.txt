@@ -1,0 +1,5 @@
+Tabler Icons 3.46.0
+https://github.com/tabler/tabler-icons
+https://docs.tabler.io/icons/static-files/svg
+Icons: home, hammer, music, mood-smile, file-text.
+MIT license in TABLER-LICENSE.txt.

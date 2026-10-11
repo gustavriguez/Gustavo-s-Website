@@ -1,0 +1,5 @@
+Graph Paper and Topography by Steve Schoger, Hero Patterns.
+https://heropatterns.com/
+https://github.com/sschoger/hero-patterns
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Modifications: copper color and reduced opacity.

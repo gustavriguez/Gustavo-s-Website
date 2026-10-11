@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Gustavorodriguezpc">
+<meta name="creator" content="Gustavorodriguezpc">
+<title>TRACE  -  Power Apps Style Portfolio Simulator</title>
+<meta name="description" content="TRACE sanitized Power Apps-style run tracking portfolio simulation using synthetic data only.">
+<style>
+:root{
+  --orange:#FF7A00;--orangeHover:#E56E00;--orangePress:#CC6200;--black:#1A1A1A;--white:#FFFFFF;
+  --text:#323130;--muted:#6B6B6B;--light:#F5F5F5;--line:#808080;--green:#2E7D32;--gray:#9E9E9E;
+  --red:#A4262C;--blue:#0078D4;
+}
+*{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#dadada;font-family:"Segoe UI",Arial,sans-serif;color:var(--text)}
+button,input,select,textarea{font-family:"Segoe UI",Arial,sans-serif}
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#dadada;overflow:hidden}
+#scaleWrap{width:1366px;height:768px;transform-origin:center center;box-shadow:0 2px 14px rgba(0,0,0,.22);background:white}
+#app{width:1366px;height:768px;position:relative;background:white;overflow:hidden}
+.screen{position:absolute;inset:0;background:white;display:none;opacity:0;transition:opacity .12s ease}
+.screen.active{display:block;opacity:1}
+.pa-header{position:absolute;left:0;top:0;width:1366px;height:90px;background:var(--orange)}
+.pa-header.compact{height:80px;top:3px}
+.pa-title{position:absolute;left:100px;top:0;height:90px;display:flex;align-items:center;font-size:32px;font-weight:700;color:#323130}
+.pa-title.center{left:0;width:1366px;justify-content:center;font-size:36px}
+.pa-back{position:absolute;left:32px;top:20px;width:50px;height:50px;border-radius:12px;border:1px solid white;background:transparent;color:white;font-size:24px;font-weight:700;cursor:pointer}
+.pa-back:hover{background:#E05606}.pa-back:active{background:#FDCFB4;color:#323130}
+.pa-btn{border:0;border-radius:12px;font-size:20px;font-weight:700;cursor:pointer;transition:.08s;background:var(--orange);color:white}
+.pa-btn:hover{background:var(--orangeHover)}.pa-btn:active{background:var(--orangePress)}.pa-btn.black{background:var(--black)}.pa-btn.black:hover{background:#333}.pa-btn.white{background:white;color:var(--black);border:1px solid var(--line)}.pa-btn.white:hover{background:#FFF3E8}.pa-btn.danger{background:var(--red)}.pa-btn.danger:hover{background:#8d1f24}.pa-btn.small{font-size:14px;border-radius:8px}
+.pa-label{font-size:14px;color:var(--text)}.pa-muted{color:var(--muted)}
+.pa-input,.pa-select,.pa-textarea{border:1px solid var(--black);background:white;color:var(--text);font-size:18px;padding:0 14px;outline:none;border-radius:0}.pa-input:focus,.pa-select:focus,.pa-textarea:focus{border:2px solid var(--orange)}
+.pa-textarea{padding:10px 14px;resize:none}
+.pa-card{position:absolute;background:white;border:1px solid var(--black)}
+.statusBadge{position:absolute;height:50px;border-radius:0;color:white;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center}
+.status-active{background:var(--green)}.status-paused{background:var(--orange)}.status-handoff{background:var(--blue)}.status-setup{background:var(--gray)}
+.instruction{position:absolute;color:#6B6B6B;font-weight:600;font-size:14px}
+/* HOME */
+#scrHome{background:linear-gradient(#fafafa,#efefef)}
+#scrHome:after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.50)}
+.home-content{position:absolute;inset:0;z-index:1}
+.home-title{position:absolute;top:180px;left:0;width:1366px;height:90px;text-align:center;font-weight:700;font-size:48px;line-height:90px;color:#323130}
+.home-sub{position:absolute;top:270px;left:0;width:1366px;text-align:center;font-size:22px;font-weight:600;color:#A04008}
+.home-divider{position:absolute;top:322px;left:583px;width:200px;height:4px;background:var(--orange)}
+.home-role{position:absolute;left:483px;width:400px;height:100px;font-size:22px}
+#btnOperator{top:380px}#btnSupervisor{top:496px}
+/* ROOM */
+#roomGrid{position:absolute;left:90px;top:130px;width:1182px;height:588px;display:grid;grid-template-columns:repeat(6,177px);grid-auto-rows:180px;gap:24px}
+.roomButton{position:relative;width:177px;height:180px;border:1px solid #808080;border-radius:12px;background:white;color:#000;font-size:20px;font-weight:700;cursor:pointer;padding:16px 10px;text-align:center}
+.roomButton:hover{background:#FFF3E8;border-color:transparent}.roomButton:active{background:#FFE0C2;color:white}.roomButton .roomState{position:absolute;bottom:12px;left:14px;right:14px;font-size:11px;font-weight:600;color:#6B6B6B}.roomButton .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:#bbb}.roomButton.busy .dot{background:var(--green)}.roomButton.paused .dot{background:var(--orange)}.roomButton.handoff .dot{background:var(--blue)}
+/* BATCH */
+#runCard{left:333px;top:150px;width:700px;height:430px}
+.fieldLabel{position:absolute;left:373px;width:620px;height:30px;font-size:16px;font-weight:600}
+.runControl{position:absolute;left:373px;width:620px;height:60px}
+#scheduledLabel{top:175px}#scheduledRun{top:205px;height:48px}
+#runLabel{top:266px}#runNumber{top:296px;height:48px}
+#projectLabel{top:355px;width:295px}#workstreamLabel{top:355px;left:698px;width:295px}
+#projectSelect{top:385px;width:295px;height:48px}#workstreamSelect{top:385px;left:698px;width:295px;height:48px}
+#operatorLabel{top:446px;width:295px}#shiftLabel{top:446px;left:698px;width:295px}
+#operatorInput{top:476px;width:295px;height:48px}#shiftSelect{top:476px;left:698px;width:295px;height:48px}
+#runStart{position:absolute;left:483px;top:610px;width:400px;height:100px}
+/* ACTIVE */
+#activeInfoCard{left:90px;top:130px;width:1186px;height:460px}
+#activeTitle{font-size:28px;font-weight:700;color:#323130}
+.active-kv{position:absolute;left:130px;font-size:20px}.active-kv b{display:inline-block;width:190px}
+#kvRun{top:165px}#kvProject{top:215px}#kvWorkstream{top:265px}#kvOperator{top:315px}#kvShift{top:365px}#kvSync{top:415px}
+#activeStatusLarge{position:absolute;left:678px;top:261px;width:575px;height:150px;color:white;font-size:30px;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+#activeStatusLarge small{font-size:16px;font-weight:500;margin-top:8px}
+#pauseReasonLine{position:absolute;left:130px;top:480px;width:500px;font-size:17px;font-style:italic}
+#activeCommentsPanel{position:absolute;left:678px;top:430px;width:575px;height:135px;border:1px solid #C8C8C8;background:#FAFAFA;box-sizing:border-box}
+#activeCommentsHeader{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 12px;border-bottom:1px solid #D8D8D8;background:#F3F2F1;font-size:14px;font-weight:700}
+#activeCommentsCount{font-size:12px;color:#6B6B6B;font-weight:600}
+#activeCommentsBody{height:99px;overflow:auto;padding:7px 12px;box-sizing:border-box;font-size:13px;line-height:1.35}
+.activeCommentRow{padding:5px 0;border-bottom:1px solid #E5E5E5;white-space:pre-wrap}.activeCommentRow:last-child{border-bottom:0}.activeNoComments{color:#777;font-style:italic;padding-top:8px}
+.actionRow{position:absolute;left:90px;top:630px;height:110px;display:flex;gap:20px}
+.actionRow .pa-btn{width:220px;height:110px;font-size:20px}
+#activeComment{width:200px}.acceptBtn{background:var(--orange)!important}
+/* REASON */
+.reason-progress{position:absolute;left:90px;top:105px;width:1186px;height:60px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.reasonStep{border-bottom:4px solid #d0d0d0;padding:4px 8px 9px;font-size:15px;color:#777;font-weight:600}.reasonStep.current{border-color:var(--orange);color:#323130}.reasonStep.done{border-color:#323130;color:#323130}
+#reasonInstruction{left:90px;top:180px;width:1186px;font-size:17px;font-weight:600}
+#reasonChoices{position:absolute;left:90px;top:220px;width:1186px;height:420px;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:78px;gap:12px;align-content:start}
+.reasonChoice{border:1px solid #808080;border-radius:10px;background:white;color:#323130;font-weight:700;font-size:18px;cursor:pointer;padding:10px 18px;text-align:left}.reasonChoice:hover{background:#FFF3E8;border-color:var(--orange)}
+#reasonStepBack{position:absolute;left:90px;bottom:18px;width:140px;height:84px}
+#reasonSummary{position:absolute;left:245px;bottom:18px;width:775px;height:84px;border:1px solid #b0b0b0;background:#fafafa;padding:12px 16px;font-size:15px}
+#confirmDown{position:absolute;right:90px;bottom:18px;width:230px;height:84px}
+/* SUPERVISOR */
+#supTitle{left:100px;font-size:30px;color:#323130}.supTopControl{position:absolute;top:20px;height:50px}.supSelect{background:#F5F5F5;border:1px solid #F5F5F5;font-size:15px;padding:0 10px}.supInput{background:#F5F5F5;border:1px solid #F5F5F5;font-size:15px;padding:0 10px}
+#supRoom{left:520px;width:140px}#supStatus{left:670px;width:140px}#supRun{left:820px;width:140px}#supSync{left:970px;width:85px}#supData{left:1065px;width:80px}#supArchive{left:1155px;width:120px}#supClock{left:1285px;width:65px}
+#supInstruction{left:40px;top:100px;width:900px}
+#supGallery{position:absolute;left:40px;top:140px;width:1300px;height:590px;overflow:auto;border-top:1px solid #eee}
+.supRow{height:138px;position:relative;border-bottom:8px solid white;background:#fafafa;margin-bottom:2px}.supStrip{position:absolute;left:0;top:0;width:8px;height:130px}.supRoomRun{position:absolute;left:24px;top:16px;width:360px;font-size:22px;font-weight:700}.supProject{position:absolute;left:24px;top:52px;width:390px;font-size:15px;color:#6B6B6B}.supReason{position:absolute;left:24px;top:85px;width:470px;font-size:14px;font-style:italic}.supStatus{position:absolute;left:535px;top:18px;width:170px;font-size:18px;font-weight:700}.supOperator{position:absolute;left:535px;top:56px;width:220px;font-size:14px}.supDowntime{position:absolute;left:790px;top:20px;width:180px;font-size:20px;font-weight:700}.supSync{position:absolute;left:790px;top:58px;width:190px;font-size:14px}.supActions{position:absolute;right:22px;top:27px;display:flex;gap:10px}.supActions button{width:110px;height:48px}
+/* DATA */
+#dataTabs{position:absolute;left:92px;top:106px;display:flex;gap:8px}.dataTab{height:48px;padding:0 22px;border-radius:8px;border:1px solid #b0b0b0;background:white;font-weight:700;font-size:15px;cursor:pointer}.dataTab.active{background:var(--black);color:white;border-color:var(--black)}
+#dataActions{position:absolute;right:90px;top:106px;display:flex;gap:8px}#dataActions button{height:48px;padding:0 16px}
+#dataTableWrap{position:absolute;left:90px;top:170px;width:1186px;height:530px;border:1px solid #c8c8c8;overflow:auto;background:white}
+table{border-collapse:collapse;min-width:100%;font-size:14px}th{position:sticky;top:0;background:#F3F2F1;color:#323130;border-bottom:1px solid #c8c8c8;padding:12px;text-align:left;font-weight:700;z-index:2}td{border-bottom:1px solid #e6e6e6;padding:11px 12px;white-space:nowrap}tr:hover td{background:#FFF3E8}
+
+/* ARCHIVE */
+#archiveFilters{position:absolute;left:40px;top:108px;width:1280px;height:58px;display:flex;gap:12px;align-items:center}
+#archiveFilters .pa-select,#archiveFilters .pa-input{height:44px;font-size:15px;background:#F5F5F5;border:1px solid #D0D0D0}
+#archiveRun{width:230px}#archiveRoom{width:210px}#archiveStatus{width:180px}
+#archiveCount{margin-left:auto;font-size:15px;font-weight:600;color:#6B6B6B}
+#archiveGallery{position:absolute;left:40px;top:178px;width:1286px;height:545px;border-top:1px solid #D8D8D8;overflow:auto}
+.archiveRow{position:relative;height:104px;border-bottom:1px solid #E1E1E1;background:white}
+.archiveRow:hover{background:#FFF7EF}
+.archiveStrip{position:absolute;left:0;top:0;width:8px;height:104px}.archiveMain{position:absolute;left:28px;top:15px;font-size:19px;font-weight:700}
+.archiveSub{position:absolute;left:28px;top:48px;font-size:14px;color:#6B6B6B}.archiveMeta{position:absolute;left:500px;top:16px;font-size:14px;line-height:25px}.archiveReason{position:absolute;left:780px;top:16px;width:300px;font-size:14px;color:#555;line-height:22px}.archiveView{position:absolute;right:20px;top:27px;width:110px;height:50px}
+.managerTag{display:inline-block;margin-left:10px;padding:3px 9px;background:#1A1A1A;color:white;border-radius:10px;font-size:12px;vertical-align:middle}
+.roomArchiveBtn{position:absolute;right:32px;top:14px;width:150px;height:52px;z-index:6}.archiveReadOnly{position:absolute;right:42px;top:23px;font-size:13px;font-weight:700;color:#6B6B6B}
+
+/* MODAL */
+#modalShade{position:absolute;inset:0;background:rgba(0,0,0,.50);z-index:500;display:none;align-items:center;justify-content:center}#modalShade.show{display:flex}.modalCard{width:700px;max-height:640px;background:white;border:1px solid #323130;box-shadow:0 6px 22px rgba(0,0,0,.28);position:relative;padding-bottom:24px}.modalHeader{height:78px;background:var(--orange);padding:0 28px;display:flex;align-items:center;font-size:26px;font-weight:700}.modalBody{padding:24px 28px;font-size:16px;max-height:500px;overflow:auto}.modalClose{position:absolute;right:18px;top:14px;width:48px;height:48px;border:0;background:transparent;font-size:28px;cursor:pointer}.modalBody label{font-weight:600;display:block;margin:12px 0 6px}.modalBody input,.modalBody select,.modalBody textarea{width:100%;border:1px solid #323130;font-size:17px;padding:10px}.modalFooter{display:flex;justify-content:flex-end;gap:10px;padding:0 28px}.modalFooter button{width:170px;height:58px}
+.toast{position:absolute;right:24px;bottom:20px;z-index:900;background:#323130;color:white;border-left:7px solid var(--orange);padding:13px 18px;min-width:300px;font-size:15px;transform:translateY(120px);transition:.2s}.toast.show{transform:none}
+.smallPill{display:inline-block;padding:3px 8px;border-radius:10px;font-size:12px;font-weight:700;color:white}.smallPill.pending{background:#A15C00}.smallPill.synced{background:#2E7D32}.smallPill.error{background:#A4262C}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="scaleWrap"><div id="app">
+
+<section id="scrHome" class="screen active">
+  <div class="home-content">
+    <div class="home-title">TRACE</div><div class="home-sub">Sanitized portfolio simulation · synthetic data only</div><div class="home-divider"></div>
+    <button id="btnOperator" class="pa-btn home-role" onclick="enterOperator()">Operator</button>
+    <button id="btnSupervisor" class="pa-btn black home-role" onclick="enterManager()">Manager</button>
+  </div>
+</section>
+
+<section id="scrRoomSelect" class="screen">
+  <div class="pa-header compact"></div><div class="pa-title center" style="height:80px;top:3px">Select Room</div>
+  <button class="pa-back" onclick="nav('scrHome')">&lt;</button>
+  <button class="pa-btn black small roomArchiveBtn" onclick="openArchive('scrRoomSelect')">ARCHIVE</button>
+  <div id="roomGrid"></div>
+</section>
+
+<section id="scrRunEntry" class="screen">
+  <div class="pa-header compact"></div><div id="runHeader" class="pa-title center" style="height:80px;top:3px;font-size:36px">New Run</div>
+  <button class="pa-back" onclick="nav('scrRoomSelect')">&lt;</button>
+  <div class="instruction" style="left:333px;top:102px;width:700px;text-align:center;font-size:15px">Pick a scheduled run or enter the run information, then tap START BATCH.</div>
+  <div id="runCard" class="pa-card"></div>
+  <div id="scheduledLabel" class="fieldLabel">Scheduled Run (optional)</div><select id="scheduledRun" class="pa-select runControl" onchange="applySchedule()"></select>
+  <div id="runLabel" class="fieldLabel">Run Number</div><input id="runNumber" class="pa-input runControl" placeholder="Enter run number">
+  <div id="projectLabel" class="fieldLabel">Project</div><select id="projectSelect" class="pa-select runControl"><option>Project A</option><option>Project B</option><option>Project C</option><option>Project D</option></select>
+  <div id="workstreamLabel" class="fieldLabel">Workstream</div><select id="workstreamSelect" class="pa-select runControl"><option>Workstream 26-01</option><option>Workstream 26-02</option><option>Workstream 26-03</option><option>Workstream 26-04</option></select>
+  <div id="operatorLabel" class="fieldLabel">Operator</div><input id="operatorInput" class="pa-input runControl" value="Operator A">
+  <div id="shiftLabel" class="fieldLabel">Shift</div><select id="shiftSelect" class="pa-select runControl"><option>First Shift</option><option>Second Shift</option><option>Third Shift</option></select>
+  <button id="runStart" class="pa-btn" onclick="startRun()">START BATCH</button>
+</section>
+
+<section id="scrActiveProcess" class="screen">
+  <div class="pa-header"></div><button class="pa-back" onclick="activeBack()">&lt;</button><div id="activeTitle" class="pa-title"></div>
+  <div id="activeStatusBadge" class="statusBadge" style="left:1100px;top:20px;width:230px"></div>
+  <div id="activeInstruction" class="instruction" style="left:90px;top:100px;width:1000px">Use the buttons below to track this run live. Comments can be added at any point.</div>
+  <div id="activeInfoCard" class="pa-card"></div>
+  <div id="kvRun" class="active-kv"></div><div id="kvProject" class="active-kv"></div><div id="kvWorkstream" class="active-kv"></div><div id="kvOperator" class="active-kv"></div><div id="kvShift" class="active-kv"></div><div id="kvSync" class="active-kv"></div>
+  <div id="activeStatusLarge"></div><div id="pauseReasonLine"></div>
+  <div id="activeCommentsPanel"><div id="activeCommentsHeader"><span>RUN COMMENTS</span><span id="activeCommentsCount"></span></div><div id="activeCommentsBody"></div></div>
+  <div id="activeActions" class="actionRow"></div>
+</section>
+
+<section id="scrReasonPicker" class="screen">
+  <div class="pa-header"></div><button class="pa-back" onclick="nav('scrActiveProcess')">&lt;</button><div class="pa-title">Select Down Reason</div>
+  <div id="reasonProgress" class="reason-progress"></div><div id="reasonInstruction" class="instruction"></div><div id="reasonChoices"></div>
+  <button id="reasonStepBack" class="pa-btn white" onclick="backReasonStep()">BACK</button><div id="reasonSummary"></div><button id="confirmDown" class="pa-btn" onclick="confirmDown()" disabled>CONFIRM DOWN</button>
+</section>
+
+<section id="scrSupervisor" class="screen">
+  <div class="pa-header"></div><button class="pa-back" onclick="nav('scrHome')">&lt;</button><div id="supTitle" class="pa-title">Manager Dashboard <span class="managerTag">MANAGER ACCESS</span></div>
+  <select id="supRoom" class="supTopControl supSelect" onchange="renderSupervisor()"></select><select id="supStatus" class="supTopControl supSelect" onchange="renderSupervisor()"><option value="">All Statuses</option><option>Active</option><option>Paused</option><option>Awaiting Handoff</option></select><input id="supRun" class="supTopControl supInput" placeholder="Run" oninput="renderSupervisor()">
+  <button id="supSync" class="pa-btn small supTopControl" onclick="processAllQueue()">SYNC</button><button id="supData" class="pa-btn black small supTopControl" onclick="openData('live')">DATA</button><button id="supArchive" class="pa-btn black small supTopControl" onclick="openArchive('scrSupervisor')">ARCHIVE</button><button id="supClock" class="pa-btn white small supTopControl" onclick="advance15()">+15M</button>
+  <div id="supInstruction" class="instruction">Live view of every active room. Manager access includes Void and archived-record review.</div><div id="supGallery"></div>
+</section>
+
+
+<section id="scrArchive" class="screen">
+  <div class="pa-header"></div><button class="pa-back" onclick="archiveBack()">&lt;</button><div class="pa-title">TRACE Archive</div><div class="archiveReadOnly">READ-ONLY HISTORY</div>
+  <div id="archiveFilters">
+    <input id="archiveRun" class="pa-input" placeholder="Search run" oninput="renderArchive()">
+    <select id="archiveRoom" class="pa-select" onchange="renderArchive()"></select>
+    <select id="archiveStatus" class="pa-select" onchange="renderArchive()"><option value="">All Final Statuses</option><option>Completed</option><option>Void</option></select>
+    <button class="pa-btn white small" style="width:120px;height:44px" onclick="clearArchiveFilters()">CLEAR</button>
+    <div id="archiveCount"></div>
+  </div>
+  <div id="archiveGallery"></div>
+</section>
+
+<section id="scrData" class="screen">
+  <div class="pa-header"></div><button class="pa-back" onclick="nav('scrSupervisor')">&lt;</button><div class="pa-title">TRACE Data</div>
+  <div id="dataTabs"><button class="dataTab" data-tab="live" onclick="switchData('live')">TRACE</button><button class="dataTab" data-tab="archive" onclick="switchData('archive')">Archive</button><button class="dataTab" data-tab="queue" onclick="switchData('queue')">Integration Queue</button><button class="dataTab" data-tab="external" onclick="switchData('external')">External View</button></div>
+  <div id="dataActions"></div><div id="dataTableWrap"></div>
+</section>
+
+<div id="modalShade"><div class="modalCard"><div id="modalHeader" class="modalHeader"></div><button class="modalClose" onclick="closeModal()">×</button><div id="modalBody" class="modalBody"></div><div id="modalFooter" class="modalFooter"></div></div></div>
+<div id="toast" class="toast"></div>
+
+</div></div></div>
+<script>
+const ROOMS=["Station A","Station B","Station C","Station D","Station E","Station F","Station G","Station H","Station I","Station J","Station K","Station L"];
+const DT=[{"discipline":"Equipment","reason":"Equipment Unavailable","issue":"Mechanical","detail":"Component issue"},{"discipline":"Equipment","reason":"Equipment Unavailable","issue":"Electrical","detail":"Power or sensor issue"},{"discipline":"Equipment","reason":"Setup / Changeover","issue":"Configuration","detail":"Setup adjustment"},{"discipline":"Materials","reason":"Input Not Available","issue":"Delivery","detail":"Waiting for material"},{"discipline":"Materials","reason":"Input Not Available","issue":"Staging","detail":"Waiting for staging"},{"discipline":"Personnel","reason":"Staffing","issue":"Operator unavailable","detail":"Coverage needed"},{"discipline":"Personnel","reason":"Scheduled Pause","issue":"Meeting / break","detail":"Planned interruption"},{"discipline":"Environment","reason":"Area Condition","issue":"Environmental","detail":"Condition outside target"},{"discipline":"Documentation","reason":"Record / Approval","issue":"Review pending","detail":"Waiting for review"},{"discipline":"Planning","reason":"Schedule","issue":"No work ready","detail":"Waiting for next run"},{"discipline":"Planning","reason":"Schedule","issue":"Priority changed","detail":"Work reprioritized"},{"discipline":"Other","reason":"Other","issue":"Unclassified","detail":"Add explanation in comments"}];
+const schedules=[{"RunNumber":"DEMO-101","Project":"Project A","Workstream":"Workstream 1","Room":"Station B"},{"RunNumber":"DEMO-102","Project":"Project B","Workstream":"Workstream 2","Room":"Station E"},{"RunNumber":"DEMO-103","Project":"Project C","Workstream":"Workstream 3","Room":"Station H"},{"RunNumber":"DEMO-104","Project":"Project A","Workstream":"Workstream 4","Room":"Station J"}];
+let live=[],archive=[],queue=[],mockExternal={};let selectedRoom='',selectedRun='',reason={step:0,discipline:'',reason:'',issue:'',detail:''};let offsetMin=0;let dataTab='live';let currentRole='operator';let managerViewingRun=false;let archiveBackTarget='scrRoomSelect';
+const VOID_AUTH_PINS={'1111':'Demo Lead'};
+const STORAGE_KEY='TRACE_PortfolioDemo_v1';
+function saveState(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({live,archive,queue,mockExternal,offsetMin}))}catch(e){}}
+function loadState(){try{let raw=localStorage.getItem(STORAGE_KEY);if(!raw)return false;let st=JSON.parse(raw);if(!st||!Array.isArray(st.live)||!Array.isArray(st.archive)||!Array.isArray(st.queue))return false;live=st.live;archive=st.archive;queue=st.queue;mockExternal=st.mockExternal||{};offsetMin=Number(st.offsetMin||0);return true}catch(e){return false}}
+const now=()=>new Date(Date.now()+offsetMin*60000); const iso=()=>now().toISOString(); const pad=n=>String(n).padStart(2,'0');
+function stamp(d=now()){d=new Date(d);return `${pad(d.getMonth()+1)}/${pad(d.getDate())}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`}
+function mins(s){if(!s)return 0;return Math.max(0,Math.floor((now()-new Date(s))/60000))}
+function rid(){return 'RUN-'+String(Math.floor(Math.random()*900000)+100000)}function qid(){return 'Q-'+String(queue.length+1).padStart(4,'0')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function current(){return live.find(r=>r.RunID===selectedRun)||live.find(r=>r.Room===selectedRoom)}
+function addHistory(r,action,by,detail=''){r.ActivityHistory.push(`${stamp()} | ${action} | ${by}${detail?' | '+detail:''}`);r.LastAction=action;r.LastActionBy=by;r.LastUpdated=iso();r.RunRevision++;enqueue(r,action)}
+function enqueue(r,action){queue.unshift({QueueID:qid(),RunID:r.RunID,RunNumber:r.RunNumber,Room:r.Room,Action:action,Status:'Pending',Attempts:0,Error:'',Created:iso()});r.ExternalSyncStatus='Pending';saveState()}
+function statusClass(s){return s==='Active'?'status-active':s==='Paused'?'status-paused':s==='Awaiting Handoff'?'status-handoff':'status-setup'}
+function init(){
+ if(!loadState()){
+  live=[
+   mk('RUN-DEMO-101','DEMO-101','Station A','Active','Operator A','First Shift','Project A','Workstream 1',-155,18),
+   mk('RUN-DEMO-102','DEMO-102','Station C','Paused','Operator B','First Shift','Project B','Workstream 2',-110,25,'Equipment > Equipment Unavailable > Mechanical > Component issue',-20),
+   mk('RUN-DEMO-103','DEMO-103','Station F','Awaiting Handoff','Operator C','Second Shift','Project C','Workstream 3',-75,8,'','', 'Waiting for incoming operator','Operator D')
+  ];
+  live.forEach(r=>enqueue(r,'Seeded Demo State'));
+  live.forEach((r,i)=>{if(i===0){processQueueItem(queue.find(q=>q.RunID===r.RunID),false)}});
+  saveState();
+ }
+ renderRooms();renderSupervisor();fit();
+}
+function mk(id,run,room,status,operator,shift,project,workstream,startAgo,down=0,pause='',pauseAgo='',handoff='',handoffTo=''){
+ let started=new Date(now().getTime()+startAgo*60000).toISOString();
+ let paused=status==='Paused'?new Date(now().getTime()+Number(pauseAgo||-10)*60000).toISOString():'';
+ return {RunID:id,RunNumber:run,Room:room,Status:status,Operator:operator,Shift:shift,Project:project,Workstream:workstream,StartedDateTime:started,PausedDateTime:paused,CurrentPauseReason:pause,TotalDowntimeMinutes:down,Notepad:[],HandoffNotes:handoff,HandoffTo:handoffTo,LastAction:'Started',LastActionBy:operator,LastUpdated:iso(),RunRevision:1,ExternalSyncStatus:'Pending',ExternalSyncLastUpdated:'',ExternalSyncError:'',ActivityHistory:[`${stamp(started)} | Started | ${operator}`]}
+}
+function fit(){let s=Math.min(innerWidth/1366,innerHeight/768);document.getElementById('scaleWrap').style.transform=`scale(${s})`}
+addEventListener('resize',fit);
+function nav(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');if(id==='scrRoomSelect')renderRooms();if(id==='scrActiveProcess')renderActive();if(id==='scrSupervisor')renderSupervisor();if(id==='scrArchive')renderArchive();}
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._to);t._to=setTimeout(()=>t.classList.remove('show'),1800)}
+function renderRooms(){let g=document.getElementById('roomGrid');g.innerHTML=ROOMS.map(room=>{let r=live.find(x=>x.Room===room);let cls=r?(r.Status==='Paused'?'paused':r.Status==='Awaiting Handoff'?'handoff':'busy'):'';let state=r?`${r.Status} · ${r.RunNumber}`:'Available';return `<button class="roomButton ${cls}" onclick="selectRoom('${esc(room).replace(/'/g,"\\'")}')">${esc(room)}<span class="roomState"><span class="dot"></span>${esc(state)}</span></button>`}).join('')}
+function enterOperator(){currentRole='operator';managerViewingRun=false;nav('scrRoomSelect')}
+function enterManager(){currentRole='manager';managerViewingRun=false;nav('scrSupervisor')}
+function activeBack(){if(currentRole==='manager'&&managerViewingRun){managerViewingRun=false;nav('scrSupervisor')}else nav('scrRoomSelect')}
+function selectRoom(room){selectedRoom=room;let r=live.find(x=>x.Room===room);managerViewingRun=false;if(r){selectedRun=r.RunID;nav('scrActiveProcess')}else{selectedRun='';prepareRun();nav('scrRunEntry')}}
+function prepareRun(){document.getElementById('runHeader').textContent='New Run - '+selectedRoom;let sel=document.getElementById('scheduledRun');let opts=schedules.filter(x=>!x.Room||x.Room===selectedRoom);sel.innerHTML='<option value="">Manual entry</option>'+opts.map((x,i)=>`<option value="${esc(x.RunNumber)}">${esc(x.RunNumber)} · ${esc(x.Project)} · ${esc(x.Workstream)}</option>`).join('');document.getElementById('runNumber').value='';}
+function applySchedule(){let v=document.getElementById('scheduledRun').value,s=schedules.find(x=>x.RunNumber===v);if(!s)return;document.getElementById('runNumber').value=s.RunNumber;document.getElementById('projectSelect').value=s.Project;document.getElementById('workstreamSelect').value=s.Workstream}
+function startRun(){let run=document.getElementById('runNumber').value.trim(),op=document.getElementById('operatorInput').value.trim();if(!run||!op)return toast('Run Number and Operator are required');let r=mk(rid(),run,selectedRoom,'Active',op,document.getElementById('shiftSelect').value,document.getElementById('projectSelect').value,document.getElementById('workstreamSelect').value,0,0);live.push(r);selectedRun=r.RunID;enqueue(r,'Started');nav('scrActiveProcess');toast('Run started')}
+function elapsed(r){return Math.max(0,Math.floor((now()-new Date(r.StartedDateTime))/60000))}
+function renderActive(){let r=current();if(!r){nav('scrRoomSelect');return}selectedRun=r.RunID;selectedRoom=r.Room;document.getElementById('activeTitle').textContent=r.Room;let sb=document.getElementById('activeStatusBadge');sb.className='statusBadge '+statusClass(r.Status);sb.textContent=r.Status;document.getElementById('kvRun').innerHTML=`<b>Run Number</b>${esc(r.RunNumber)}`;document.getElementById('kvProject').innerHTML=`<b>Project</b>${esc(r.Project)}`;document.getElementById('kvWorkstream').innerHTML=`<b>Workstream</b>${esc(r.Workstream)}`;document.getElementById('kvOperator').innerHTML=`<b>Operator</b>${esc(r.Operator)}`;document.getElementById('kvShift').innerHTML=`<b>Shift</b>${esc(r.Shift)}`;document.getElementById('kvSync').innerHTML=`<b>External Sync</b>${esc(r.ExternalSyncStatus)}`;let sl=document.getElementById('activeStatusLarge');sl.className=statusClass(r.Status);let down=r.TotalDowntimeMinutes+(r.Status==='Paused'?mins(r.PausedDateTime):0);sl.innerHTML=`${esc(r.Status)}<small>${elapsed(r)} min elapsed · ${down} min downtime · Rev ${r.RunRevision}</small>`;document.getElementById('pauseReasonLine').textContent=r.Status==='Paused'?`Down reason: ${r.CurrentPauseReason}`:r.Status==='Awaiting Handoff'?`Handoff to ${r.HandoffTo}: ${r.HandoffNotes}`:'Last action: '+r.LastAction+' by '+r.LastActionBy;
+ let comments=Array.isArray(r.Notepad)?r.Notepad:[];document.getElementById('activeCommentsCount').textContent=`${comments.length} comment${comments.length===1?'':'s'}`;let cb=document.getElementById('activeCommentsBody');cb.innerHTML=comments.length?comments.map(x=>`<div class="activeCommentRow">${esc(x)}</div>`).join(''):'<div class="activeNoComments">No comments have been added to this run.</div>';cb.scrollTop=cb.scrollHeight;
+ let a=document.getElementById('activeActions'),buttons=[];
+ if(r.Status==='Active')buttons.push(`<button class="pa-btn" onclick="openDown()">DOWN</button>`);
+ if(r.Status==='Paused')buttons.push(`<button class="pa-btn" onclick="resumeRun()">RESUME</button>`);
+ if(r.Status==='Awaiting Handoff')buttons.push(`<button class="pa-btn acceptBtn" onclick="acceptHandoff()">ACCEPT HANDOFF</button>`);
+ buttons.push(`<button id="activeComment" class="pa-btn white" onclick="commentModal()">COMMENT</button>`);
+ if(r.Status!=='Awaiting Handoff')buttons.push(`<button class="pa-btn black" onclick="handoffModal()">HANDOFF</button>`);
+ buttons.push(`<button class="pa-btn black" onclick="completeModal()">END</button>`);buttons.push(`<button class="pa-btn danger" onclick="pinVoidModal('${r.RunID}')">VOID</button>`);a.innerHTML=buttons.join('')
+}
+function openDown(){reason={step:0,discipline:'',reason:'',issue:'',detail:''};renderReason();nav('scrReasonPicker')}
+function unique(arr){return [...new Set(arr)].sort((a,b)=>a.localeCompare(b))}
+function reasonOptions(){let f=DT;if(reason.step>=1)f=f.filter(x=>x.discipline===reason.discipline);if(reason.step>=2)f=f.filter(x=>x.reason===reason.reason);if(reason.step>=3)f=f.filter(x=>x.issue===reason.issue);return reason.step===0?unique(f.map(x=>x.discipline)):reason.step===1?unique(f.map(x=>x.reason)):reason.step===2?unique(f.map(x=>x.issue)):unique(f.map(x=>x.detail))}
+function renderReason(){let labels=['1  Discipline','2  Reason','3  Issue Type','4  Detail'];document.getElementById('reasonProgress').innerHTML=labels.map((l,i)=>`<div class="reasonStep ${i===reason.step?'current':i<reason.step?'done':''}">${l}</div>`).join('');document.getElementById('reasonInstruction').textContent=['Who owns fixing it?','Why did it stop or become unavailable?','What kind of issue is it?','Exactly what happened?'][reason.step];let opts=reasonOptions();document.getElementById('reasonChoices').innerHTML=opts.map(o=>`<button class="reasonChoice" onclick="pickReason('${encodeURIComponent(o)}')">${esc(o)}</button>`).join('');let selected=[reason.discipline,reason.reason,reason.issue,reason.detail].filter(Boolean).join('  ›  ');document.getElementById('reasonSummary').innerHTML=`<b>Selected Down Code</b><br>${esc(selected||'Select each level above.')}`;document.getElementById('confirmDown').disabled=!reason.detail;document.getElementById('reasonStepBack').disabled=reason.step===0}
+function pickReason(enc){let v=decodeURIComponent(enc);if(reason.step===0)reason.discipline=v;if(reason.step===1)reason.reason=v;if(reason.step===2)reason.issue=v;if(reason.step===3)reason.detail=v;if(reason.step<3)reason.step++;renderReason()}
+function backReasonStep(){if(reason.step===0)return;reason.step--;if(reason.step===0){reason.discipline='';reason.reason='';reason.issue='';reason.detail=''}else if(reason.step===1){reason.reason='';reason.issue='';reason.detail=''}else if(reason.step===2){reason.issue='';reason.detail=''};renderReason()}
+function confirmDown(){let r=current();if(!r||!reason.detail)return;let code=[reason.discipline,reason.reason,reason.issue,reason.detail].join(' > ');r.Status='Paused';r.PausedDateTime=iso();r.CurrentPauseReason=code;addHistory(r,'Down',r.Operator,code);nav('scrActiveProcess');toast('Process set to Down')}
+function resumeRun(){let r=current();if(r.PausedDateTime)r.TotalDowntimeMinutes+=mins(r.PausedDateTime);r.Status='Active';r.PausedDateTime='';let old=r.CurrentPauseReason;r.CurrentPauseReason='';addHistory(r,'Resumed',r.Operator,old);renderActive();toast('Process resumed')}
+function modal(title,body,footer=''){document.getElementById('modalHeader').textContent=title;document.getElementById('modalBody').innerHTML=body;document.getElementById('modalFooter').innerHTML=footer;document.getElementById('modalShade').classList.add('show')}
+function closeModal(){document.getElementById('modalShade').classList.remove('show')}
+function commentModal(){modal('Add Comment',`<label>Comment</label><textarea id="commentText" rows="5" placeholder="Enter a process note"></textarea>`,`<button class="pa-btn white" onclick="closeModal()">CANCEL</button><button class="pa-btn" onclick="saveComment()">SAVE</button>`)}
+function saveComment(){let t=document.getElementById('commentText').value.trim(),r=current();if(!t)return toast('Enter a comment');r.Notepad.push(`${stamp()} | ${r.Operator} | ${t}`);addHistory(r,'Comment Added',r.Operator,t);closeModal();renderActive();toast('Comment saved')}
+function handoffModal(){let r=current();modal('Operator Handoff',`<label>Handoff To</label><input id="handoffTo" value="Incoming Operator"><label>Incoming Shift</label><select id="handoffShift"><option>First Shift</option><option>Second Shift</option><option>Third Shift</option></select><label>Handoff Notes</label><textarea id="handoffNotes" rows="4" placeholder="Anything the incoming operator needs to know"></textarea>`,`<button class="pa-btn white" onclick="closeModal()">CANCEL</button><button class="pa-btn black" onclick="saveHandoff()">HANDOFF</button>`)}
+function saveHandoff(){let r=current(),to=document.getElementById('handoffTo').value.trim(),notes=document.getElementById('handoffNotes').value.trim();if(!to)return toast('Handoff operator is required');r.Status='Awaiting Handoff';r.HandoffTo=to;r.HandoffNotes=notes;r.PendingShift=document.getElementById('handoffShift').value;addHistory(r,'Shift Handoff',r.Operator,`${r.Operator} to ${to}${notes?' · '+notes:''}`);closeModal();renderActive();toast('Awaiting handoff')}
+function acceptHandoff(){let r=current();let from=r.Operator;r.Operator=r.HandoffTo||r.Operator;r.Shift=r.PendingShift||r.Shift;r.HandoffTo='';r.HandoffNotes='';r.PendingShift='';r.Status='Active';addHistory(r,'Handoff Accepted',r.Operator,`from ${from}`);renderActive();toast('Handoff accepted')}
+function completeModal(){let r=current();modal('End Process',`<div style="font-size:19px;font-weight:600;margin-bottom:12px">${esc(r.RunNumber)} · ${esc(r.Room)}</div><div>Completing the process copies the full record into <b>TRACE Archive</b>, confirms the archive record, then removes the live row.</div><label>Completed By</label><input id="completeBy" value="${esc(r.Operator)}">`,`<button class="pa-btn white" onclick="closeModal()">CANCEL</button><button class="pa-btn black" onclick="completeRun()">COMPLETE</button>`)}
+function completeRun(){let r=current(),by=document.getElementById('completeBy').value.trim()||r.Operator;closeModal();archiveRun(r,'Completed',by,'');if(currentRole==='manager'&&managerViewingRun){managerViewingRun=false;nav('scrSupervisor')}else nav('scrRoomSelect');toast('Process archived as Completed')}
+function archiveRun(r,finalStatus,by,voidReason){if(r.Status==='Paused'&&r.PausedDateTime)r.TotalDowntimeMinutes+=mins(r.PausedDateTime);let final={...r,CompletedDateTime:iso(),FinalStatus:finalStatus,ArchivedDateTime:iso(),ArchivedBy:by,VoidedBy:finalStatus==='Void'?by:'',VoidReason:voidReason||'',FinalDowntimeMinutes:r.TotalDowntimeMinutes,FinalExternalSyncStatus:r.ExternalSyncStatus,ActivityHistory:[...r.ActivityHistory]};final.ActivityHistory.push(`${stamp()} | ${finalStatus} | ${by}${voidReason?' | '+voidReason:''}`);archive.unshift(final);enqueue(r,finalStatus);live=live.filter(x=>x.RunID!==r.RunID);saveState()}
+function renderSupervisor(){let roomSel=document.getElementById('supRoom');if(roomSel.options.length===0)roomSel.innerHTML='<option value="">All Rooms</option>'+ROOMS.map(r=>`<option>${esc(r)}</option>`).join('');let room=roomSel.value,st=document.getElementById('supStatus').value,b=(document.getElementById('supRun').value||'').toLowerCase();let rows=live.filter(r=>(!room||r.Room===room)&&(!st||r.Status===st)&&(!b||r.RunNumber.toLowerCase().includes(b)));let g=document.getElementById('supGallery');g.innerHTML=rows.map(r=>{let strip=r.Status==='Active'?'#2E7D32':r.Status==='Paused'?'#FF7A00':'#0078D4';let down=r.TotalDowntimeMinutes+(r.Status==='Paused'?mins(r.PausedDateTime):0);let reason=r.CurrentPauseReason||r.HandoffNotes||'No active exception';return `<div class="supRow"><div class="supStrip" style="background:${strip}"></div><div class="supRoomRun">${esc(r.Room)} · ${esc(r.RunNumber)}</div><div class="supProject">${esc(r.Project)} / ${esc(r.Workstream)}</div><div class="supReason">${esc(reason)}</div><div class="supStatus">${esc(r.Status)}</div><div class="supOperator">${esc(r.Operator)} · ${esc(r.Shift)}</div><div class="supDowntime">${down} min down</div><div class="supSync">External sync: ${esc(r.ExternalSyncStatus)}</div><div class="supActions"><button class="pa-btn white small" onclick="managerOpenRun('${r.RunID}')">OPEN</button><button class="pa-btn danger small" onclick="voidModal('${r.RunID}')">VOID</button></div></div>`}).join('')||'<div style="padding:40px;font-size:18px;color:#6B6B6B">No matching live processes.</div>'}
+function managerOpenRun(id){if(currentRole!=='manager')return toast('Manager access required');let r=live.find(x=>x.RunID===id);if(!r)return;selectedRun=id;selectedRoom=r.Room;managerViewingRun=true;nav('scrActiveProcess')}
+function viewRun(id){let r=live.find(x=>x.RunID===id);modal('Process Details',`<div style="display:grid;grid-template-columns:150px 1fr;gap:8px 12px"><b>RunID</b><span>${esc(r.RunID)}</span><b>Run</b><span>${esc(r.RunNumber)}</span><b>Room</b><span>${esc(r.Room)}</span><b>Status</b><span>${esc(r.Status)}</span><b>Operator</b><span>${esc(r.Operator)}</span><b>Revision</b><span>${r.RunRevision}</span><b>External Sync</b><span>${esc(r.ExternalSyncStatus)}</span></div><h3>Activity History</h3><div style="border:1px solid #ddd">${r.ActivityHistory.map(x=>`<div style="padding:8px 10px;border-bottom:1px solid #eee">${esc(x)}</div>`).join('')}</div><h3>Comments</h3>${r.Notepad.map(x=>`<div style="padding:7px 0">${esc(x)}</div>`).join('')||'<div class="pa-muted">No comments.</div>'}`,`<button class="pa-btn black" onclick="closeModal()">CLOSE</button>`)}
+function voidModal(id){if(currentRole!=='manager')return toast('Manager access required');let r=live.find(x=>x.RunID===id);if(!r)return;selectedRun=id;selectedRoom=r.Room;modal('Manager Void',`<div style="font-size:19px;font-weight:600;margin-bottom:10px">${esc(r.RunNumber)} · ${esc(r.Room)}</div><div style="padding:10px 12px;background:#FFF3E8;border-left:5px solid #FF7A00;margin-bottom:14px"><b>Manager-only action.</b> The live record will be archived before it is removed.</div><label>Manager</label><input id="voidBy" value="Manager A"><label>Void Reason</label><textarea id="voidReason" rows="5" placeholder="Required"></textarea>`,`<button class="pa-btn white" onclick="closeModal()">CANCEL</button><button class="pa-btn danger" onclick="voidRun()">VOID</button>`)}
+function pinVoidModal(id){let r=live.find(x=>x.RunID===id);if(!r)return;selectedRun=id;selectedRoom=r.Room;modal('Lead / Manager Void Authorization',`<div style="font-size:19px;font-weight:600;margin-bottom:10px">${esc(r.RunNumber)} · ${esc(r.Room)}</div><div style="padding:10px 12px;background:#FFF3E8;border-left:5px solid #FF7A00;margin-bottom:14px"><b>Authorized personnel only.</b> Enter an approved Lead / Manager PIN to void this live run. Authorization applies to this action only.</div><label>Authorization PIN</label><input id="voidPin" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="Enter PIN"><label>Void Reason</label><textarea id="voidPinReason" rows="5" placeholder="Required"></textarea><div style="margin-top:12px;font-size:13px;color:#6B6B6B"><b>Portfolio demo:</b> use PIN 1111.</div>`,`<button class="pa-btn white" onclick="closeModal()">CANCEL</button><button class="pa-btn danger" onclick="voidRunWithPin()">AUTHORIZE & VOID</button>`);setTimeout(()=>document.getElementById('voidPin')?.focus(),0)}
+function voidRunWithPin(){let r=current();if(!r)return;let pin=(document.getElementById('voidPin')?.value||'').trim(),reason=(document.getElementById('voidPinReason')?.value||'').trim(),by=VOID_AUTH_PINS[pin];if(!pin)return toast('Authorization PIN is required');if(!by){let p=document.getElementById('voidPin');if(p){p.value='';p.focus()}return toast('Invalid authorization PIN')}if(!reason)return toast('Void Reason is required');archiveRun(r,'Void',by,reason);closeModal();managerViewingRun=false;renderSupervisor();renderRooms();if(currentRole==='manager')nav('scrSupervisor');else nav('scrRoomSelect');toast('Process archived as Void by '+by)}
+function voidRun(){let r=current(),reason=document.getElementById('voidReason').value.trim(),by=document.getElementById('voidBy').value.trim()||'Manager';if(!reason)return toast('Void Reason is required');archiveRun(r,'Void',by,reason);closeModal();managerViewingRun=false;renderSupervisor();renderRooms();if(currentRole==='manager')nav('scrSupervisor');toast('Process archived as Void')}
+function openArchive(backTarget){archiveBackTarget=backTarget||(currentRole==='manager'?'scrSupervisor':'scrRoomSelect');nav('scrArchive')}
+function archiveBack(){nav(archiveBackTarget||'scrRoomSelect')}
+function clearArchiveFilters(){document.getElementById('archiveRun').value='';document.getElementById('archiveStatus').value='';document.getElementById('archiveRoom').value='';renderArchive()}
+function renderArchive(){let roomSel=document.getElementById('archiveRoom');if(roomSel&&roomSel.options.length===0)roomSel.innerHTML='<option value="">All Rooms</option>'+ROOMS.map(r=>`<option>${esc(r)}</option>`).join('');let b=(document.getElementById('archiveRun')?.value||'').toLowerCase(),room=document.getElementById('archiveRoom')?.value||'',st=document.getElementById('archiveStatus')?.value||'';let rows=archive.filter(r=>(!b||String(r.RunNumber).toLowerCase().includes(b))&&(!room||r.Room===room)&&(!st||r.FinalStatus===st));document.getElementById('archiveCount').textContent=`${rows.length} archived record${rows.length===1?'':'s'}`;document.getElementById('archiveGallery').innerHTML=rows.map(r=>{let strip=r.FinalStatus==='Void'?'#A4262C':'#2E7D32';let note=r.FinalStatus==='Void'?(r.VoidReason||'No void reason recorded'):'Completed process';return `<div class="archiveRow"><div class="archiveStrip" style="background:${strip}"></div><div class="archiveMain">${esc(r.Room)} · Run ${esc(r.RunNumber)}</div><div class="archiveSub">${esc(r.Project)} / ${esc(r.Workstream)} · ${esc(r.FinalStatus)}</div><div class="archiveMeta"><b>Archived:</b> ${esc(formatDateTime(r.ArchivedDateTime))}<br><b>By:</b> ${esc(r.ArchivedBy||r.VoidedBy||'')}</div><div class="archiveReason"><b>${r.FinalStatus==='Void'?'Void reason':'Final downtime'}</b><br>${r.FinalStatus==='Void'?esc(note):esc(String(r.FinalDowntimeMinutes||0)+' min')}</div><button class="pa-btn white small archiveView" onclick="viewArchive('${r.RunID}')">VIEW</button></div>`}).join('')||'<div style="padding:42px;font-size:18px;color:#6B6B6B">No archived records match the selected filters.</div>'}
+function formatDateTime(v){if(!v)return '';let d=new Date(v);return isNaN(d)?v:d.toLocaleString()}
+function viewArchive(id){let r=archive.find(x=>x.RunID===id);if(!r)return;modal('Archived Process',`<div style="display:grid;grid-template-columns:170px 1fr;gap:9px 14px"><b>Run</b><span>${esc(r.RunNumber)}</span><b>Room</b><span>${esc(r.Room)}</span><b>Final Status</b><span>${esc(r.FinalStatus)}</span><b>Archived</b><span>${esc(formatDateTime(r.ArchivedDateTime))}</span><b>Archived By</b><span>${esc(r.ArchivedBy||'')}</span><b>Final Downtime</b><span>${esc(String(r.FinalDowntimeMinutes||0))} min</span><b>Void Reason</b><span>${esc(r.VoidReason||' - ')}</span><b>Final External Sync</b><span>${esc(r.FinalExternalSyncStatus||'')}</span></div><h3>Activity History</h3><div style="border:1px solid #ddd">${(r.ActivityHistory||[]).map(x=>`<div style="padding:8px 10px;border-bottom:1px solid #eee">${esc(x)}</div>`).join('')||'<div style="padding:10px">No history.</div>'}</div><h3>Comments</h3>${(r.Notepad||[]).map(x=>`<div style="padding:7px 0">${esc(x)}</div>`).join('')||'<div class="pa-muted">No comments.</div>'}`,`<button class="pa-btn black" onclick="closeModal()">CLOSE</button>`)}
+function advance15(){offsetMin+=15;saveState();renderSupervisor();if(document.getElementById('scrActiveProcess').classList.contains('active'))renderActive();toast('Simulation advanced 15 minutes')}
+function processQueueItem(q,fail=false){if(!q)return;q.Attempts++;let r=live.find(x=>x.RunID===q.RunID),a=archive.find(x=>x.RunID===q.RunID);if(fail){q.Status='Error';q.Error='Simulated workbook lock';if(r){r.ExternalSyncStatus='Error';r.ExternalSyncError=q.Error}saveState();return}q.Status='Synced';q.Error='';let source=r||a;if(source)mockExternal[q.RunID]={RunID:q.RunID,RunNumber:q.RunNumber,Room:q.Room,Status:r?r.Status:a.FinalStatus,LastAction:q.Action,Updated:iso()};if(r){r.ExternalSyncStatus='Synced';r.ExternalSyncLastUpdated=iso();r.ExternalSyncError=''}if(a)a.FinalExternalSyncStatus='Synced';saveState()}
+function processAllQueue(){queue.filter(q=>q.Status==='Pending'||q.Status==='Error').forEach(q=>processQueueItem(q,false));renderSupervisor();if(document.getElementById('scrData').classList.contains('active'))renderData();toast('Integration queue processed')}
+function failNext(){let q=queue.find(q=>q.Status==='Pending');if(!q)return toast('No pending integration item');processQueueItem(q,true);renderData();toast('Next integration item failed intentionally')}
+function openData(tab){dataTab=tab;nav('scrData');renderData()}
+function switchData(tab){dataTab=tab;renderData()}
+function renderData(){document.querySelectorAll('.dataTab').forEach(b=>b.classList.toggle('active',b.dataset.tab===dataTab));let actions=document.getElementById('dataActions');actions.innerHTML=dataTab==='queue'?`<button class="pa-btn white small" onclick="failNext()">FAIL NEXT</button><button class="pa-btn small" onclick="processAllQueue()">PROCESS ALL</button>`:'';let rows=[],cols=[];if(dataTab==='live'){rows=live;cols=['RunID','RunNumber','Room','Status','Operator','Shift','TotalDowntimeMinutes','CurrentPauseReason','RunRevision','ExternalSyncStatus']}if(dataTab==='archive'){rows=archive;cols=['RunID','RunNumber','Room','FinalStatus','ArchivedDateTime','ArchivedBy','VoidedBy','VoidReason','FinalDowntimeMinutes','FinalExternalSyncStatus']}if(dataTab==='queue'){rows=queue;cols=['QueueID','RunID','RunNumber','Room','Action','Status','Attempts','Error']}if(dataTab==='external'){rows=Object.values(mockExternal);cols=['RunID','RunNumber','Room','Status','LastAction','Updated']}document.getElementById('dataTableWrap').innerHTML=`<table><thead><tr>${cols.map(c=>`<th>${esc(c)}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${cols.map(c=>`<td>${esc(Array.isArray(r[c])?r[c].join(' | '):(r[c]??''))}</td>`).join('')}</tr>`).join('')||`<tr><td colspan="${cols.length}">No records.</td></tr>`}</tbody></table>`}
+init();
+</script>
+</body></html>

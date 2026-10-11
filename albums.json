@@ -1,0 +1,36 @@
+{
+  "source": "https://www.last.fm/user/guub33/library/albums",
+  "checked": "2026-10-10",
+  "albums": [
+    {
+      "artist": "Fishmans",
+      "title": "98.12.28 男達の別れ (Live)",
+      "image": "assets/settings/album-df817caf86c8f8ad7218565efae2c9f1.jpg",
+      "url": "https://www.last.fm/music/Fishmans/98.12.28+%E7%94%B7%E9%81%94%E3%81%AE%E5%88%A5%E3%82%8C+(Live)"
+    },
+    {
+      "artist": "Pixies",
+      "title": "Doolittle",
+      "image": "assets/settings/album-995f97abbadd1a5e69a2967c72074867.jpg",
+      "url": "https://www.last.fm/music/Pixies/Doolittle"
+    },
+    {
+      "artist": "Elliott Smith",
+      "title": "Either/Or",
+      "image": "assets/settings/album-9597a3b25436611d117167eec2c80dc5.jpg",
+      "url": "https://www.last.fm/music/Elliott+Smith/Either%2FOr"
+    },
+    {
+      "artist": "Aphex Twin",
+      "title": "Selected Ambient Works 85-92",
+      "image": "assets/settings/album-36307d33d9e5025c8f4564748e17a5f8.jpg",
+      "url": "https://www.last.fm/music/Aphex+Twin/Selected+Ambient+Works+85-92"
+    },
+    {
+      "artist": "Aphex Twin",
+      "title": "Selected Ambient Works Volume II",
+      "image": "assets/settings/album-27cbbe4e88884b81911699b88c2d5eca.jpg",
+      "url": "https://www.last.fm/music/Aphex+Twin/Selected+Ambient+Works+Volume+II"
+    }
+  ]
+}

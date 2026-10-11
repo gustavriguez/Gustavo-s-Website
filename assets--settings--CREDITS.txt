@@ -1,0 +1,37 @@
+Decorative settings, not project evidence.
+
+ambientCG CC0 assets: DayEnvironmentHDRI107 (forest), Rock064 (mossy rock), Metal063 (weathered metal), LeafSet030 (leaves).
+https://ambientcg.com/a/DayEnvironmentHDRI107
+https://ambientcg.com/a/Rock064
+https://ambientcg.com/a/Metal063
+https://ambientcg.com/a/LeafSet030
+License: https://docs.ambientcg.com/license/
+
+Orion Nebula in Infrared, PIA25434. Credit: ESA/NASA/JPL-Caltech.
+https://science.nasa.gov/photojournal/orion-nebula-in-infrared/
+Usage: https://www.nasa.gov/nasa-brand-center/images-and-media/
+
+Album thumbnails: album artwork from the public Last.fm guub33 library, linked to its album pages. Artwork belongs to the respective artists and rights holders; it is not CC0.
+https://www.last.fm/user/guub33/library/albums
+
+Factory pipe and engineering trace backgrounds: original SVG artwork for this portfolio, inspired by 1990s factory interfaces and Nubby's Number Factory. No game artwork redistributed.
+
+Vintage mail bird animation: Artworkis / LotsAnimations, provided in its Free Animations for YOUR Website collection.
+https://www.geocities.ws/lotsanimations/ANAMATIONS.htm
+Computer Geek and Popcorn blinkies: Adrian's Blinkie Collection, assets a28.gif and a29.gif.
+https://adriansblinkiecollection.neocities.org/
+Layout inspiration: EGGRAMEN Busy Generic, Skin #1. Original Bootstrap implementation; no stylesheet copied.
+https://eggramen.neocities.org/code/css/misc/busy/busy_base2_skin1
+
+Homepage: Helix Nebula (NIRCam), Webb, released 20 January 2026.
+Image: NASA, ESA, CSA, STScI; Image Processing: Alyssa Pagan (STScI).
+https://science.nasa.gov/asset/webb/helix-nebula-nircam/
+Resized and compressed for web delivery; decorative, not project evidence.
+
+EXO project evidence: original MATLAB_battery_current_modeling.jpg from the team EXO Drive / Electrical / Test Data, unmodified.
+https://drive.google.com/file/d/1jrqOVuA5tDVquUBV6yeTA7zMDiuG_L_S/view
+
+PID Spoon team electrical designs: original Drive JPGs. Schematic credited to Luis Lopez Rondon in its title block.
+https://drive.google.com/file/d/1pQsOtyQH10-v6HJyesszuICdTMInfOk-/view
+https://drive.google.com/file/d/1MyfOh6xN_YqhPYz7fvRqBp-z7ylEa0v2/view
+https://drive.google.com/file/d/100SH5xL_6GPavPX1qXZ_TX5OZKMafC75/view

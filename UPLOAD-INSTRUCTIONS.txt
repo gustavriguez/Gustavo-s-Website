@@ -1,0 +1,10 @@
+GITHUB PAGES
+
+1. Extract this ZIP. Every file is at the top level; there are no folders.
+2. Upload the extracted files to gustavriguez/Gustavo-s-Website on main. GitHub accepts up to 100 files per browser upload, so use batches. Upload the files, not the ZIP itself.
+3. Settings > Pages > Deploy from a branch > main > / (root).
+
+EDITOR CHANGES
+Open About and use Edit at the bottom right. The password is unchanged. Download the individual JSON file and replace the matching file here. Download new images or documents into this same folder. Run REBUILD.cmd, then upload the updated files. The editor never pushes automatically.
+
+Keep rebuild.cjs and flat-file-map.json: they rebuild the HTML after content edits.

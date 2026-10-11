@@ -1,0 +1,2089 @@
+{
+  "profile": {
+    "name": "Gustavo Rodriguez",
+    "about": "Mechanical engineering student working across regulated manufacturing, reliability, robotics, embedded systems, CAD, and human-motion research. I like projects where physical equipment, data, controls, documentation, and the people using the system all have to make sense together.",
+    "email": "gustavorodriguez@usf.edu",
+    "linkedin": "https://www.linkedin.com/in/gustavo33/",
+    "github": "https://github.com/gustavriguez",
+    "lastfm": "https://www.last.fm/user/guub33",
+    "location": "Tampa, Florida",
+    "graduation": "December 2028",
+    "gpa": "3.33",
+    "portrait": "assets/images/gustavo-headshot-vertical.webp",
+    "resume": "assets/originals/engineering-resume-current.pdf",
+    "updated": "October 10, 2026",
+    "homePortrait": "assets/images/gustavo-headshot-horizontal.webp",
+    "highSchool": {
+      "name": "Leto High School",
+      "date": "2020–2024"
+    }
+  },
+  "projects": [
+    {
+      "id": "exo-project",
+      "title": "IEEE EXO",
+      "description": "Project lead for a unilateral lower-limb assistive exoskeleton using AK80-9 actuators, Teensy 4.1 controllers, Jetson Orin Nano compute, IMUs, heel/toe FSRs, CAN planning, and gait-based design inputs. Work includes project direction, technical meetings, budgets, design reviews, procurement, testing, and safety planning.",
+      "tag": "Robotics / biomechanics",
+      "galleryKey": "exo-project",
+      "category": "Robotics",
+      "image": "assets/images/work-exo-gbm-photo-v59.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/gbm-gbm-exo-table.webp",
+          "alt": "IEEE EXO demonstration table at a USF GBM",
+          "caption": "IEEE USF GBM · EXO project outreach table."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/exo-torque-original.png",
+          "alt": "Simulated left hip and knee torque at 100% assistance.",
+          "caption": "Simulated left hip and knee torque at 100% assistance."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/exo-current-original.png",
+          "alt": "Simulated 48 V battery current and current demand per actuator.",
+          "caption": "Simulated 48 V battery current and current demand per actuator."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/exo-assist-sweep-original.png",
+          "alt": "Effect of assistance level on battery current, knee motor heating, and torque-gap closure.",
+          "caption": "Effect of assistance level on battery current, knee motor heating, and torque-gap closure."
+        }
+      ],
+      "notes": [
+        "Lead the multidisciplinary EXO program across mechanical, electrical, controls, R&D, testing, safety, documentation, procurement, and design reviews.",
+        "Current hardware direction uses powered hip and knee actuation with a passive ankle concept, with gait-driven torque and timing decisions informing prototype development.",
+        "Coordinate board-level events, workshops, recruitment, career-fair and employer outreach, sponsor communication, budgets, purchasing, meeting logistics, and cross-team schedules.",
+        "Research work includes Vicon/PKMAS/force-plate data, OpenSim gait comparison, MATLAB analysis, and pre-prototype testing used to support actuator sizing and control strategy."
+      ],
+      "tools": [
+        "SolidWorks",
+        "OpenSim",
+        "MATLAB",
+        "Teensy / embedded controls",
+        "CAN",
+        "IMUs / FSRs",
+        "Altium Designer"
+      ],
+      "roles": [
+        {
+          "eyebrow": "LEADERSHIP / PROGRAM",
+          "title": "Project Lead / EXO Chair and President",
+          "meta": "IEEE USF · Aug 2025–Present",
+          "accent": "exo",
+          "bullets": [
+            "Lead a multidisciplinary lower-limb exoskeleton program spanning mechanical design, electrical, controls, research, fabrication, testing, and safety; manage design reviews, technical deliverables, procurement, subsystem dependencies, and approximately $5,000 in development budget.",
+            "Define requirements for a unilateral hip/knee assistive prototype, including joint alignment, human interfaces, actuator sizing, sensing, power, controls, and test planning; guide integration of AK80-9 actuators, IMUs, encoders, Jetson Orin Nano, and Teensy 4.1 controllers.",
+            "Translate biomechanics and motion-analysis goals into engineering decisions on assistance timing, torque targets, prototype architecture, safety limits, and validation strategy while coordinating cross-team milestones and technical documentation.",
+            "Coordinate board-level events, workshops, recruitment, career-fair/employer outreach, sponsor and industry communication, purchasing, meeting logistics, and cross-team schedules."
+          ],
+          "impact": "Multidisciplinary technical leadership with approximately $5,000 in development budget."
+        }
+      ],
+      "impact": "~$5,000 development budget",
+      "section": "engineering",
+      "downloads": [
+        {
+          "url": "research.html",
+          "title": "Browse EXO research topics"
+        }
+      ],
+      "summary": "Robotics / biomechanics"
+    },
+    {
+      "id": "xcelodose",
+      "title": "Xcelodose 600S",
+      "description": "Reliability investigation across failed microbalances and encapsulation equipment using 6M analysis, equipment inspection, manufacturing observation, mechanical alignment, maintenance-history review, comparison across failed units, and corrective documentation.",
+      "tag": "Reliability / RCA",
+      "galleryKey": "",
+      "category": "Industry",
+      "image": "assets/images/lonza-equipment-03.webp",
+      "gallery": [],
+      "notes": [
+        "Reliability: led a root-cause investigation after 3 of 4 Xcelodose microbalance units became unavailable, separating mechanical, handling, static, sensing, communication, and software-related failure pathways.",
+        "Applied physical inspection, Gemba observation, equipment history, 6M/FMEA thinking, alignment and corner-load checks, cross-unit comparison, and SOP review to support corrective actions and recurrence-prevention training."
+      ],
+      "tools": [
+        "6M / FMEA",
+        "Gemba",
+        "Power Apps",
+        "SharePoint",
+        "Power Automate",
+        "Excel / Power BI"
+      ],
+      "roles": [],
+      "impact": "Investigated failure pathways across three unavailable microbalance units.",
+      "section": "work",
+      "summary": "Reliability / RCA",
+      "downloads": [],
+      "experienceLink": "reliability"
+    },
+    {
+      "id": "smurf",
+      "title": "SMURF",
+      "description": "Power Apps maintenance request system that standardizes requests from submission through closure. Structured assessments determine initial priority automatically, SharePoint maintains the request record, and a separate Maintenance App handles assignment, work orders, status, notes, and follow-up. Power Automate manages notifications and recurring assignment reminders.",
+      "tag": "Power Apps / Power Automate / SharePoint",
+      "galleryKey": "smurf",
+      "category": "Software",
+      "image": "assets/images/SMURFFinal.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/smurf-thank-you-screen.webp",
+          "alt": "SMURF submission confirmation screen",
+          "caption": "01 · Submission confirmation ;  Thank you for using SMURF."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-general-assessment-screen.webp",
+          "alt": "SMURF general assessment screen",
+          "caption": "03 · Requester app ;  General Assessment."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-controls-questions-screen.webp",
+          "alt": "SMURF controls electrical automation questions screen",
+          "caption": "04 · Requester app ;  Controls / Electrical / Automation assessment."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-request-details-screen.webp",
+          "alt": "SMURF request details screen",
+          "caption": "05 · Requester app ;  room, asset, issue summary, impact notes, details, and attachments."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-review-submit-screen.webp",
+          "alt": "SMURF review before submitting screen",
+          "caption": "06 · Requester app ;  Review before submission."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-email-new-request.webp",
+          "alt": "SMURF new request notification email",
+          "caption": "08 · Notification ;  new request email with priority and request summary."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-maintenance-list-screen.webp",
+          "alt": "SMURF maintenance request queue",
+          "caption": "09 · Maintenance app ;  searchable and filterable active request queue."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-maintenance-detail-screen.webp",
+          "alt": "SMURF maintenance assignment and detail screen",
+          "caption": "10 · Maintenance app ;  assignment, status, work order, notes, and attachments."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-email-reminder.webp",
+          "alt": "SMURF waiting for assignment reminder email",
+          "caption": "11 · Reminder ;  request waiting for assignment."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-flow-request-created-routing.webp",
+          "alt": "SMURF request-created Power Automate routing flow",
+          "caption": "12 · Power Automate ;  request creation, urgency routing, and record updates."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-flow-recurrence-reminders.webp",
+          "alt": "SMURF recurring reminder Power Automate flow",
+          "caption": "13 · Power Automate ;  recurring reminder checks by urgency class."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-flow-same-shift-and-not-immediate-reminders.webp",
+          "alt": "SMURF same-shift and not-immediate reminder branches",
+          "caption": "14 · Power Automate ;  Same-Shift and Not Immediate reminder branches."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/smurf-flow-status-sync-to-excel.webp",
+          "alt": "SMURF maintenance status synchronization flow",
+          "caption": "15 · Power Automate ;  maintenance status synchronization and downstream record update."
+        }
+      ],
+      "notes": [
+        "Requesters record equipment conditions; the app assigns urgency using the assessment rules.",
+        "Power Apps assigns Immediate, Same-Shift, or Not Immediate using hard overrides and condition combinations.",
+        "Maintenance receives a separate review experience with assignment, status, work-order, notes, attachments, and reminder automation."
+      ],
+      "tools": [
+        "Power Apps",
+        "SharePoint",
+        "Power Automate",
+        "Excel",
+        "Power BI"
+      ],
+      "roles": [
+        {
+          "eyebrow": "SYSTEM DESIGN",
+          "title": "S.M.U.R.F. maintenance request system",
+          "meta": "Power Platform · 2026",
+          "accent": "smurf",
+          "media": "SMURFFinal.png",
+          "bullets": [
+            "Designed a guided request flow where requesters answer factual condition questions instead of manually assigning urgency.",
+            "Built Immediate hard overrides and Same-Shift condition logic, with Not Immediate as the default when no higher-priority rule is met.",
+            "Created a separate maintenance-facing experience for assignment, status, work-order tracking, notes, attachments, and automated reminders, backed by SharePoint records."
+          ],
+          "impact": "One request path from intake through maintenance follow-up."
+        }
+      ],
+      "impact": "From intake to follow-up",
+      "section": "work",
+      "summary": "Power Apps / Power Automate / SharePoint",
+      "downloads": []
+    },
+    {
+      "id": "carrt",
+      "title": "CARRT Research",
+      "description": "A wearable ESP32/IMU sensor for rugby lineout research, designed for repeatable placement on the ankle and thigh and comparison with Vicon motion capture.",
+      "tag": "Biomechanics / Embedded Systems",
+      "galleryKey": "",
+      "category": "Research",
+      "image": "assets/images/carrt-r9-exploded.png",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/carrt-r9-exploded.png",
+          "alt": "R9 enclosure: separated housing, electronics, and battery components.",
+          "caption": "R9 enclosure: separated housing, electronics, and battery components."
+        }
+      ],
+      "notes": [
+        "Support human-motion experiments through sensor setup, validation, data collection, post-processing, and data-quality review.",
+        "Designed the SolidWorks enclosure around the sensor PCB, balancing a compact footprint with secure strap mounting, protection of the electronics, and access for maintenance.",
+        "The early compact housing reduced the footprint from 80 × 60 mm to 48 × 36 mm. It added ventilation and adjustable strap slots so the sensor could mount without athletic tape or a sleeve.",
+        "The later battery-integrated configuration measures 62.17 × 58.00 × 16.50 mm. Its larger footprint accommodates the battery, USB-C and switch access, M2 fastening, and service access.",
+        "The enclosure revisions balance size with structural integrity: the housing, fastening, and strap interfaces need to hold the assembly securely during movement while allowing the electronics to be accessed. R9 is the assembly shown here."
+      ],
+      "tools": [
+        "Vicon",
+        "IMUs",
+        "ESP32",
+        "SolidWorks",
+        "PCB validation support",
+        "Human-motion analysis"
+      ],
+      "roles": [
+        {
+          "eyebrow": "HUMAN MOTION / EMBEDDED",
+          "title": "REU Research Assistant",
+          "meta": "CARRT Lab · Aug 2026–Present",
+          "accent": "carrt",
+          "bullets": [
+            "Support IMU and Vicon motion analysis, experimental setup, sensor validation, and technical documentation.",
+            "Develop the enclosure and mounting interfaces for repeatable sensor placement.",
+            "Integrate PCB, battery, fasteners, strap mounts, and access openings in a serviceable assembly."
+          ],
+          "impact": "80 × 60 mm → 48 × 36 mm enclosure footprint, a 64% reduction."
+        }
+      ],
+      "impact": "Designing for motion capture",
+      "section": "research",
+      "summary": "Biomechanics / Embedded Systems",
+      "downloads": []
+    },
+    {
+      "id": "mime",
+      "title": "Mime",
+      "description": "5-DOF tendon-actuated robotic hand using an open-source mechanical design. Contributions center on controls, electronics, computer vision, calibration, testing, and documentation with ESP32, PCA9685, MG996R servos, Python, and MediaPipe.",
+      "tag": "ESP32 / Python",
+      "galleryKey": "mime",
+      "category": "Robotics",
+      "image": "assets/images/mime-mime-open-hand.webp",
+      "gallery": [
+        {
+          "type": "youtube",
+          "src": "https://www.youtube.com/shorts/QDIRQ6DCv78",
+          "alt": "Mime demonstration video 1",
+          "caption": "Mime demonstration · Video 01"
+        },
+        {
+          "type": "youtube",
+          "src": "https://www.youtube.com/shorts/n4hkNeBJoO0",
+          "alt": "Mime demonstration video 2",
+          "caption": "Mime demonstration · Video 02"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/mime-mime-access-screen.webp",
+          "alt": "Mime V1.1 joint control access screen",
+          "caption": "Mime V1.1 · Joint control access screen."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/mime-mime-control-menu.webp",
+          "alt": "Mime control menu with output mode, input source, calibration, and toggles",
+          "caption": "Control menu · Output mode, input source, calibration, and toggles."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/mime-mime-open-hand.webp",
+          "alt": "Mime camera tracking an open hand with finger landmarks and control indicators",
+          "caption": "Computer-vision input · Open hand, finger landmarks, and live control indicators."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/mime-mime-closed-hand.webp",
+          "alt": "Mime camera tracking a closed hand in four-position output mode",
+          "caption": "Computer-vision input · Closed hand in 4POS output mode."
+        }
+      ],
+      "section": "engineering",
+      "summary": "ESP32 / Python",
+      "downloads": []
+    },
+    {
+      "id": "locomotive",
+      "title": "Steam Locomotive",
+      "description": "SolidWorks wind-up steam locomotive keychain with axle-driven motion, assembly and part drawings, BOM, motion review, and 3D-print-oriented design documentation.",
+      "tag": "CAD / SolidWorks",
+      "galleryKey": "locomotive",
+      "category": "CAD",
+      "image": "assets/images/img-000.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/img-000.webp",
+          "alt": "Steam locomotive CAD image 1",
+          "caption": "Steam locomotive CAD archive · image 01"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-001.webp",
+          "alt": "Steam locomotive CAD image 2",
+          "caption": "Steam locomotive CAD archive · image 02"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-002.webp",
+          "alt": "Steam locomotive CAD image 3",
+          "caption": "Steam locomotive CAD archive · image 03"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-003.webp",
+          "alt": "Steam locomotive CAD image 4",
+          "caption": "Steam locomotive CAD archive · image 04"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-004.webp",
+          "alt": "Steam locomotive CAD image 5",
+          "caption": "Steam locomotive CAD archive · image 05"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-005.webp",
+          "alt": "Steam locomotive CAD image 6",
+          "caption": "Steam locomotive CAD archive · image 06"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-006.webp",
+          "alt": "Steam locomotive CAD image 7",
+          "caption": "Steam locomotive CAD archive · image 07"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-007.webp",
+          "alt": "Steam locomotive CAD image 8",
+          "caption": "Steam locomotive CAD archive · image 08"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-008.webp",
+          "alt": "Steam locomotive CAD image 9",
+          "caption": "Steam locomotive CAD archive · image 09"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-009.webp",
+          "alt": "Steam locomotive CAD image 10",
+          "caption": "Steam locomotive CAD archive · image 10"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-010.webp",
+          "alt": "Steam locomotive CAD image 11",
+          "caption": "Steam locomotive CAD archive · image 11"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-011.webp",
+          "alt": "Steam locomotive CAD image 12",
+          "caption": "Steam locomotive CAD archive · image 12"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-012.webp",
+          "alt": "Steam locomotive CAD image 13",
+          "caption": "Steam locomotive CAD archive · image 13"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-013.webp",
+          "alt": "Steam locomotive CAD image 14",
+          "caption": "Steam locomotive CAD archive · image 14"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-014.webp",
+          "alt": "Steam locomotive CAD image 15",
+          "caption": "Steam locomotive CAD archive · image 15"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-015.webp",
+          "alt": "Steam locomotive CAD image 16",
+          "caption": "Steam locomotive CAD archive · image 16"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-016.webp",
+          "alt": "Steam locomotive CAD image 17",
+          "caption": "Steam locomotive CAD archive · image 17"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-017.webp",
+          "alt": "Steam locomotive CAD image 18",
+          "caption": "Steam locomotive CAD archive · image 18"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-018.webp",
+          "alt": "Steam locomotive CAD image 19",
+          "caption": "Steam locomotive CAD archive · image 19"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-019.webp",
+          "alt": "Steam locomotive CAD image 20",
+          "caption": "Steam locomotive CAD archive · image 20"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-020.webp",
+          "alt": "Steam locomotive CAD image 21",
+          "caption": "Steam locomotive CAD archive · image 21"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-022.webp",
+          "alt": "Steam locomotive CAD image 23",
+          "caption": "Steam locomotive CAD archive · image 23"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-023.webp",
+          "alt": "Steam locomotive CAD image 24",
+          "caption": "Steam locomotive CAD archive · image 24"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/img-024.webp",
+          "alt": "Steam locomotive CAD image 25",
+          "caption": "Steam locomotive CAD archive · image 25"
+        }
+      ],
+      "section": "engineering",
+      "summary": "CAD / SolidWorks",
+      "downloads": []
+    },
+    {
+      "id": "shape-fight",
+      "title": "Ultimate Shape Fight",
+      "description": "2-player MATLAB game with selectable rectangle/triangle characters, private move selection, quick attack / laser / shield counter logic, animated graphics, health tracking, and game-state progression.",
+      "tag": "MATLAB",
+      "galleryKey": "shape-fight",
+      "category": "Software",
+      "image": "assets/images/shape-fight-1.webp",
+      "gallery": [
+        {
+          "type": "youtube",
+          "src": "https://www.youtube.com/watch?v=VFJ-w2PRKS4",
+          "alt": "Ultimate Shape Fight MATLAB gameplay demonstration",
+          "caption": "Gameplay demo · Ultimate Shape Fight running in MATLAB."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-1.webp",
+          "alt": "Ultimate Shape Fight running in MATLAB",
+          "caption": "Two-player MATLAB game with rendered shapes, attack states, and health logic."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184612.webp",
+          "alt": "Arena with two triangle characters",
+          "caption": "Two-player arena · Triangle characters."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184659.webp",
+          "alt": "MATLAB editor beside the running game and attack indicators",
+          "caption": "Game execution · MATLAB source and active combat state."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184708.webp",
+          "alt": "Laser and shield interaction during Ultimate Shape Fight",
+          "caption": "Combat · Laser and shield interaction."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184527.webp",
+          "alt": "Player one rectangle or triangle selection prompt",
+          "caption": "Player setup · Rectangle or triangle selection."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184532.webp",
+          "alt": "Ultimate Shape Fight opening prompt and character setup",
+          "caption": "Start menu · Game entry and player-one setup."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184555.webp",
+          "alt": "Player two shape, health bar color, and laser color choices",
+          "caption": "Customization · Player-two shape, health-bar color, and laser color."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/shape-fight-shape-184745.webp",
+          "alt": "MATLAB command window reporting a broken shield and player one hit",
+          "caption": "Combat feedback · Shield broken and player hit."
+        }
+      ],
+      "documents": [
+        "ultimate-shape-fight.pdf",
+        "ultimate-shape-fight-source.m"
+      ],
+      "section": "engineering",
+      "summary": "MATLAB",
+      "downloads": []
+    },
+    {
+      "id": "bulls",
+      "title": "Bull's Ice Cream Robot",
+      "description": "Autonomous / RC educational robot work combining a custom physical platform, embedded control, Pixy2 vision, mode switching, and a local web control interface.",
+      "tag": "Arduino / ESP32 / Pixy2",
+      "galleryKey": "bulls",
+      "category": "Robotics",
+      "image": "assets/images/bulls-1.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/bulls-icecream-robot.webp",
+          "alt": "Bull's Ice Cream robot",
+          "caption": "Bull's Ice Cream autonomous robot build."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/bullsicecream.webp",
+          "alt": "Bull's Ice Cream robot project image",
+          "caption": "Robot platform and project build."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/webhostbullsicecream.webp",
+          "alt": "Bull's Ice Cream robot web control interface",
+          "caption": "Local web control interface."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/bulls-1.webp",
+          "alt": "Bull's Ice Cream autonomous and remote-control educational robot",
+          "caption": "Completed educational robot with custom printed chassis, Pixy2 sensing, LCD feedback, and embedded controls."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/bulls-2.webp",
+          "alt": "Mobile web controller for the Bull's Ice Cream robot",
+          "caption": "ESP32-hosted control interface with RC and autonomous mode selection."
+        }
+      ],
+      "section": "engineering",
+      "summary": "Arduino / ESP32 / Pixy2",
+      "downloads": []
+    },
+    {
+      "id": "bakery",
+      "title": "State Flour Bakery",
+      "description": "Produced baked goods at State Flour Bakery, with attention to consistent measurements, fermentation, temperature, and daily production timing.",
+      "tag": "Production / process discipline",
+      "galleryKey": "bakery",
+      "category": "Production",
+      "image": "assets/images/state-flour-sourdough.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/sourdoughstateflour.webp",
+          "alt": "Sourdough loaf baked by Gustavo at State Flour",
+          "caption": "State Flour · sourdough production."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/state-flour-sourdough.webp",
+          "alt": "State Flour bakery sourdough",
+          "caption": "State Flour · production work."
+        }
+      ],
+      "section": "work",
+      "entryType": "position",
+      "roles": [
+        {
+          "title": "Baker",
+          "meta": "State Flour Bakery · Mar 2025–Jan 2026",
+          "bullets": [
+            "Measured ingredients precisely and followed the production process to keep batches repeatable.",
+            "Managed fermentation and temperature control during preparation and baking, paying attention to the conditions that affect product consistency.",
+            "Operated bakery equipment and coordinated daily production tasks with the team.",
+            "Maintained sanitation and an organized workspace throughout production."
+          ],
+          "impact": ""
+        }
+      ],
+      "summary": "Production / process discipline",
+      "downloads": []
+    },
+    {
+      "id": "gbm",
+      "title": "IEEE USF GBM",
+      "description": "General body meeting and project outreach in the Hall of Flags, including technical-program demos, student conversations, and the EXO table.",
+      "tag": "IEEE / outreach",
+      "galleryKey": "gbm",
+      "category": "Leadership",
+      "image": "assets/images/gbm-gbm-exo-table.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/gbm-gbm-hall-of-flags.webp",
+          "alt": "IEEE USF general body meeting audience in the Hall of Flags",
+          "caption": "IEEE USF GBM · Audience in the Hall of Flags."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/gbm-gbm-exo-table.webp",
+          "alt": "IEEE EXO demonstration table with the robotic hand, laptop, and team members",
+          "caption": "EXO demonstration table · Robotic hand, control interface, and team members."
+        },
+        {
+          "type": "image",
+          "src": "assets/images/gbm-gbm-project-discussion.webp",
+          "alt": "Project discussion with students at the IEEE USF general body meeting",
+          "caption": "GBM outreach · Discussing the project with attendees."
+        }
+      ],
+      "section": "engineering",
+      "summary": "IEEE / outreach",
+      "downloads": []
+    },
+    {
+      "id": "trace",
+      "title": "TRACE",
+      "category": "Software",
+      "tag": "Power Apps / SharePoint / Power Automate",
+      "description": "Manufacturing run tracker using live operator feedback to support downtime reduction and improve visibility into production status, interruptions, and shift handoffs.",
+      "notes": [
+        "Built TRACE in Power Apps with SharePoint records to track manufacturing runs across Active, Paused, and Awaiting Handoff states.",
+        "Captured live operator updates, downtime, and process notes so teams can see interruptions and respond to production issues.",
+        "Centralized batch status, shift handoffs, and activity history to keep run information visible across operators and shifts."
+      ],
+      "tools": [
+        "Power Apps",
+        "SharePoint / Lists",
+        "Power Automate"
+      ],
+      "gallery": [],
+      "demo": "trace-demo.html",
+      "section": "work",
+      "summary": "Live operator feedback, downtime tracking, and production visibility.",
+      "downloads": [],
+      "experienceLink": "reliability"
+    },
+    {
+      "id": "gait",
+      "title": "Gait comparison in OpenSim",
+      "category": "Research",
+      "tag": "OpenSim / MATLAB / biomechanics",
+      "description": "OpenSim and MATLAB study of hip and knee gait mechanics, assistance torque, and electrical demand for a lower-limb exoskeleton.",
+      "notes": [
+        "Compared gait mechanics in OpenSim to examine how muscle weakness changes hip and knee demand across the walking cycle.",
+        "Used MATLAB to explore assistance torque, actuator current, and battery demand at different assistance levels.",
+        "The graphs are simulation results. The next step is to compare model predictions with motion-capture data and hardware measurements."
+      ],
+      "tools": [
+        "OpenSim",
+        "MATLAB",
+        "Vicon"
+      ],
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/research/exo-torque-original.png",
+          "alt": "Simulated left hip and knee torque at 100% assistance.",
+          "caption": "Simulated left hip and knee torque at 100% assistance."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/exo-current-original.png",
+          "alt": "Simulated 48 V battery current and current demand per actuator.",
+          "caption": "Simulated 48 V battery current and current demand per actuator."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/exo-assist-sweep-original.png",
+          "alt": "Effect of assistance level on battery current, knee motor heating, and torque-gap closure.",
+          "caption": "Effect of assistance level on battery current, knee motor heating, and torque-gap closure."
+        }
+      ],
+      "documents": [],
+      "image": "assets/research/exo-torque-original.png",
+      "section": "research",
+      "downloads": [],
+      "summary": "Healthy and simulated post-stroke gait in OpenSim.",
+      "status": "Simulation / gait and assistance analysis"
+    },
+    {
+      "id": "pcb",
+      "title": "PCB design & Altium",
+      "category": "CAD",
+      "tag": "Altium Education / IEEE workshops",
+      "description": "Schematic capture, board layout, routing, and hands-on PCB work through Altium Education and IEEE workshops.",
+      "notes": [
+        "Completed the Altium Education PCB Basic Design Course.",
+        "Applied electronics validation and packaging work in the CARRT sensor project."
+      ],
+      "tools": [
+        "Altium Designer",
+        "Schematic capture",
+        "Board layout"
+      ],
+      "gallery": [],
+      "documents": [
+        "altium-pcb-basic-design-certificate.pdf"
+      ],
+      "section": "engineering",
+      "summary": "Altium Education / IEEE workshops",
+      "downloads": []
+    },
+    {
+      "id": "pid-spoon",
+      "title": "PID Spoon",
+      "description": "A two-axis spoon mechanism packaged around an orthogonal SG90 carrier, a PETG enclosure, and a compliant TPU grip. CAD and slicer prototype.",
+      "tag": "SolidWorks / assistive-device prototype",
+      "category": "CAD",
+      "image": "assets/images/spoon/assembly.webp",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/images/spoon/assembly.webp",
+          "alt": "SolidWorks assembly with round TPU grip",
+          "caption": "SolidWorks assembly with round TPU grip · CAD assembly"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/spoon/side.webp",
+          "alt": "SolidWorks spoon mechanism side view",
+          "caption": "SolidWorks spoon mechanism side view · CAD assembly"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/spoon/carrier.webp",
+          "alt": "Orthogonal SG90 servo carrier",
+          "caption": "Orthogonal SG90 servo carrier · CAD assembly"
+        },
+        {
+          "type": "image",
+          "src": "assets/images/spoon/grip.webp",
+          "alt": "Round compliant TPU grip",
+          "caption": "Round compliant TPU grip · CAD assembly"
+        },
+        {
+          "type": "image",
+          "src": "assets/research/pid-spoon-pcb-layout-drive.jpg",
+          "alt": "PID Spoon controller PCB layout.",
+          "caption": "PID Spoon controller PCB layout."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/pid-spoon-schematic-drive.jpg",
+          "alt": "PID Spoon controller schematic by Luis Lopez Rondon.",
+          "caption": "PID Spoon controller schematic by Luis Lopez Rondon."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/pid-spoon-board-drive.jpg",
+          "alt": "Team PID Spoon controller board / 3D board view. Design visualization, not a manufactured-board photo.",
+          "caption": "Team PID Spoon controller board / 3D board view. Design visualization, not a manufactured-board photo."
+        }
+      ],
+      "notes": [
+        "Designed a two-axis carrier and universal spoon saddle around two orthogonal SG90 servos, with a rigid enclosure and a round compliant grip.",
+        "The enclosure uses a 108 mm TPU grip and a 148 × 48 × 34 mm rigid enclosure, with tail access for the rocker switch.",
+        "The assembly uses 31 mates and preserves two rotational degrees of freedom. CAD clearance checks sampled the four corners of ±25° motion; switch-retention tabs still require a physical fit check.",
+        "Next steps: print the enclosure, check hardware fit, implement PID control, and run powered tests."
+      ],
+      "tools": [
+        "SolidWorks",
+        "Assembly mates / clearance checks",
+        "PETG / TPU",
+        "Bambu P1S print preparation"
+      ],
+      "documents": [
+        "spoon/PID_Spoon_Assembly.STEP"
+      ],
+      "section": "engineering",
+      "downloads": [
+        {
+          "url": "assets/research/pid-spoon-pcb-layout-drive.jpg",
+          "title": "PID Spoon PCB Layout · JPG"
+        },
+        {
+          "url": "assets/research/pid-spoon-schematic-drive.jpg",
+          "title": "PID Spoon Schematic · JPG"
+        },
+        {
+          "url": "assets/research/pid-spoon-board-drive.jpg",
+          "title": "PID Spoon 3D View · JPG"
+        }
+      ],
+      "summary": "SolidWorks / assistive-device prototype"
+    },
+    {
+      "id": "line-cook",
+      "title": "Line Cook",
+      "section": "work",
+      "category": "Production",
+      "tag": "Next Level Brands Hospitality / kitchen operations",
+      "description": "Prepared seasonal, locally sourced dishes in a New American kitchen while keeping prep, plating, and service consistent.",
+      "image": "",
+      "gallery": [],
+      "notes": [
+        "Prepared and cooked dishes under the chef’s direction using seasonal, locally sourced ingredients; maintained freshness, portion control, and consistent food quality.",
+        "Organized daily mise en place and applied modern plating techniques suited to the restaurant’s New American menu.",
+        "Kept prep and service stations clean and sanitary, followed food-safety standards, and coordinated with the kitchen team through menu changes and busy service."
+      ],
+      "tools": [
+        "Mise en place",
+        "New American cooking",
+        "Plating",
+        "Food safety",
+        "Portion control"
+      ],
+      "roles": [
+        {
+          "title": "Line Cook",
+          "meta": "Next Level Brands Hospitality · Full-time · Sep 2024–Mar 2025 · Tampa, Florida",
+          "bullets": [
+            "Cooked under the chef’s direction, checking ingredient freshness, food quality, and portions throughout preparation and service.",
+            "Organized daily mise en place and prepared components ahead of service so the station was ready when orders arrived.",
+            "Applied modern plating techniques consistent with the menu and coordinated with the kitchen team to keep service running smoothly.",
+            "Maintained a clean, organized workstation, followed food-safety and sanitation standards, and adapted to menu changes and new techniques during busy service."
+          ],
+          "impact": ""
+        }
+      ],
+      "entryType": "position",
+      "summary": "Next Level Brands Hospitality / kitchen operations",
+      "downloads": []
+    },
+    {
+      "section": "research",
+      "category": "Research",
+      "entryType": "project",
+      "gallery": [
+        {
+          "type": "image",
+          "src": "assets/research/exo-current-original.png",
+          "alt": "Simulated 48 V battery current and current demand per actuator.",
+          "caption": "Simulated 48 V battery current and current demand per actuator."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/exo-assist-sweep-original.png",
+          "alt": "Effect of assistance level on battery current, knee motor heating, and torque-gap closure.",
+          "caption": "Effect of assistance level on battery current, knee motor heating, and torque-gap closure."
+        },
+        {
+          "type": "image",
+          "src": "assets/research/gait_actuator_battery_dashboard-v2_2.png",
+          "alt": "Gait-cycle torque, actuator current, and power estimates.",
+          "caption": "Gait-cycle torque, actuator current, and power estimates."
+        }
+      ],
+      "documents": [],
+      "id": "exo-power",
+      "title": "EXO actuator and battery modeling",
+      "tag": "MATLAB / AK80-9 / power requirements",
+      "description": "MATLAB modeling to estimate how hip and knee assistance affects actuator current, power demand, and battery requirements.",
+      "status": "Simulation / v1 and v1.1",
+      "image": "assets/research/exo-current-original.png",
+      "tools": [
+        "MATLAB",
+        "AK80-9 actuator model",
+        "Mission ODE",
+        "Sensitivity analysis"
+      ],
+      "notes": [
+        "Built a model that translates hip and knee gait demand into motor current, electrical power, and battery energy requirements for a unilateral exoskeleton.",
+        "v1 estimates torque, current, and power throughout the gait cycle. v1.1 explores assistance levels and mission duration to compare battery demand and actuator heating.",
+        "The plots show simulated demand. Hardware testing will be used to refine the model’s loads, losses, and operating limits."
+      ],
+      "downloads": [],
+      "summary": "Actuator current, power, and battery sizing."
+    },
+    {
+      "section": "research",
+      "category": "Research",
+      "entryType": "project",
+      "gallery": [],
+      "documents": [],
+      "id": "exo-controls",
+      "title": "EXO control strategy and architecture",
+      "tag": "Controls / CAN / gait-state estimation",
+      "description": "Comparison of assistance-control approaches and an onboard architecture connecting sensing, gait state, torque commands, logging, and fault handling.",
+      "status": "Architecture and controller comparison / staged development",
+      "image": "",
+      "tools": [
+        "Gait-state estimation",
+        "Finite-state control",
+        "Torque profiles",
+        "CAN",
+        "IMU / FSR"
+      ],
+      "notes": [
+        "Compared gait-event detection, state-machine timing, torque and position profiles, impedance control, and actuator-level control for exoskeleton assistance.",
+        "Planned a sensing-to-command architecture using IMUs, foot-contact sensing, and joint feedback for gait estimation, assistance commands, logging, and fault handling.",
+        "Defined a build sequence from single-actuator CAN communication and feedback to two-actuator bench testing and integration."
+      ],
+      "downloads": [],
+      "summary": "Sensing, gait-state estimation, and torque control."
+    },
+    {
+      "section": "research",
+      "category": "Research",
+      "entryType": "project",
+      "gallery": [],
+      "documents": [],
+      "id": "exo-joints",
+      "title": "EXO joint connections and BOM research",
+      "tag": "Mechanical interfaces / procurement / materials",
+      "description": "Actuator-interface research, joint connection planning, and versioned component notebooks for the EXO mechanical and electrical design.",
+      "status": "Design and procurement study / interfaces require verification",
+      "image": "",
+      "tools": [
+        "SolidWorks interface planning",
+        "AK80-9 technical drawing",
+        "BOM research",
+        "Material selection"
+      ],
+      "notes": [
+        "Investigated case-side and output-side connections for the hip and knee actuators.",
+        "Compared metal adapters, fastening hardware, and printed guards for the joint interfaces, considering dimensions, loading, and thread engagement.",
+        "Compared actuators, controllers, sensors, batteries, wiring, attachments, and materials to guide component selection."
+      ],
+      "downloads": [],
+      "summary": "Joint interfaces and component selection."
+    },
+    {
+      "section": "research",
+      "category": "Research",
+      "entryType": "project",
+      "gallery": [],
+      "documents": [],
+      "id": "exo-ankle",
+      "title": "Five-bar ankle mechanism study",
+      "tag": "Kinematics / mechanism literature / CAD planning",
+      "description": "Literature and concept comparisons for planar five-bar, spherical five-bar, and spring-assisted ankle mechanisms.",
+      "status": "Mechanism research",
+      "image": "",
+      "tools": [
+        "Five-bar kinematics",
+        "Workspace / singularity analysis",
+        "Jacobian methods",
+        "CAD concept planning"
+      ],
+      "notes": [
+        "Studied planar five-bar, spherical five-bar, and spring-assisted ankle mechanisms for the lower-limb exoskeleton.",
+        "Compared workspace, joint motion, singularities, force and torque transmission, and link dimensions to guide mechanism selection."
+      ],
+      "downloads": [],
+      "summary": "Five-bar and spring-assisted ankle concepts."
+    },
+    {
+      "section": "research",
+      "category": "Research",
+      "entryType": "project",
+      "gallery": [],
+      "documents": [],
+      "id": "exo-research-plan",
+      "title": "EXO research methods and study planning",
+      "tag": "Biomechanics / validation planning / R&D roadmap",
+      "description": "Hemiparesis analysis charter, research-to-build decision process, training resources, and a staged plan for later motion-capture validation.",
+      "status": "Research and validation planning",
+      "image": "",
+      "tools": [
+        "OpenSim / OpenSense",
+        "MATLAB",
+        "Experimental planning",
+        "Technology trade studies"
+      ],
+      "notes": [
+        "Studied how muscle weakness and compensatory movement change gait timing and hip and knee demand.",
+        "Translated literature and simulation work into design requirements, technology comparisons, and test plans.",
+        "Planned OpenSim scaling, inverse kinematics, inverse dynamics, and motion-capture validation for the exoskeleton research workflow."
+      ],
+      "downloads": [],
+      "summary": "Research roadmap and motion-capture validation."
+    },
+    {
+      "id": "five-year-projection",
+      "title": "Five-Year Equipment Projection",
+      "description": "Five-year equipment and infrastructure projection supporting lifecycle and capital planning at Lonza.",
+      "tag": "Excel PivotTables / Power BI",
+      "summary": "Equipment lifecycle and capital planning.",
+      "category": "Industry",
+      "section": "work",
+      "entryType": "project",
+      "image": "",
+      "gallery": [],
+      "notes": [
+        "Organized and cross-referenced condition, risk, cost, ownership, and replacement data for more than 300 equipment and infrastructure assets.",
+        "Used Excel PivotTables and Power BI to summarize the planning data and support comparison of equipment needs across the five-year horizon.",
+        "Supported lifecycle and capital planning by making the equipment data easier to review and use in replacement decisions."
+      ],
+      "tools": [
+        "Excel",
+        "PivotTables",
+        "Power BI",
+        "Lifecycle planning",
+        "Capital planning"
+      ],
+      "roles": [],
+      "downloads": [],
+      "impact": "Screenshots and internal data are omitted because the projection contains confidential company information.",
+      "experienceLink": "facilities"
+    }
+  ],
+  "experience": [
+    {
+      "date": "Aug 2026 · Dec 2026",
+      "title": "Reliability Engineering Intern",
+      "org": "Lonza · Tampa, Florida",
+      "description": "Investigate equipment failures and support reliable operation in Lonza’s regulated pharmaceutical manufacturing environment.",
+      "responsibilities": [
+        "Led a root-cause investigation when three of four Xcelodose microbalance units were unavailable. Compared failed units, maintenance records, and operator practices to separate mechanical, sensing, communication, and software-interface issues.",
+        "Inspected alignment, spring and load-cell geometry, and corner-load behavior. Used 6M analysis, Gemba observations, and failure-mode review to narrow down likely causes.",
+        "Turned investigation findings into corrective-action recommendations, operator guidance, documentation updates, and recurrence-prevention training.",
+        "Worked with Engineering, Reliability, Manufacturing, and Project Engineering on equipment-risk reviews, readiness activities, technical records, and process bottlenecks.",
+        "Built TRACE to capture live operator feedback, track downtime, and improve visibility into manufacturing runs and shift handoffs."
+      ],
+      "id": "reliability",
+      "projects": [
+        "xcelodose",
+        "trace"
+      ]
+    },
+    {
+      "date": "Aug 2026 · Present",
+      "title": "REU Research Assistant",
+      "org": "CARRT Lab · University of South Florida",
+      "description": "Support human-motion research at CARRT Lab, combining motion-capture analysis with the design of a wearable sensor for rugby lineout studies.",
+      "responsibilities": [
+        "Assist with experimental setup, sensor placement, data collection, and validation using inertial measurement units (IMUs) and Vicon motion capture. Review data quality, post-process measurements, and document the research workflow.",
+        "Design modular ESP32/IMU enclosures in SolidWorks for repeatable ankle and thigh placement, with mounting, electronics access, and serviceability considered together.",
+        "Developed an earlier compact housing that reduced the planar footprint from 80 × 60 mm to 48 × 36 mm; a 64% reduction; with ventilation and adjustable strap slots.",
+        "Developed the battery-integrated enclosure configuration with USB-C and switch access, M2 fastening, strap mounting, and access to internal components.",
+        "Supported PCB validation and layout decisions so the electronics and mechanical packaging fit together."
+      ],
+      "id": "carrt-role",
+      "projects": [
+        "carrt"
+      ]
+    },
+    {
+      "date": "May 2026 · Aug 2026",
+      "title": "Facilities, Engineering & Maintenance Intern",
+      "org": "Lonza · Tampa, Florida",
+      "description": "Supported maintenance, equipment readiness, and facility improvements while developing practical tools for technicians and manufacturing teams.",
+      "responsibilities": [
+        "Assisted with preventive maintenance, equipment inspections, HVAC and air-handling work, troubleshooting, work orders, SOP updates, technician follow-up, and contractor coordination.",
+        "Led a Lean/5S asset-identification improvement using standardized, high-visibility labels and before-and-after time trials. Average equipment search time fell from about nine minutes to 1.5 minutes; an 83% reduction.",
+        "Built Power Apps, Power Automate, SharePoint, and Excel workflows for maintenance requests and cleaning-status tracking, including SMURF.",
+        "Developed technician-facing maintenance training covering preparation, execution, testing, documentation, and handoff, with GDP/ALCOA and return-to-service expectations.",
+        "Supported five-year lifecycle and capital planning by cleaning and cross-referencing condition, risk, cost, ownership, and replacement data for more than 300 equipment and infrastructure assets. Used Excel PivotTables and Power BI to summarize the projection."
+      ],
+      "id": "facilities",
+      "projects": [
+        "smurf",
+        "five-year-projection"
+      ]
+    },
+    {
+      "date": "Aug 2025 · Present",
+      "title": "Project Lead / EXO Chair and President",
+      "org": "IEEE at the University of South Florida",
+      "description": "Lead IEEE USF’s lower-limb exoskeleton program and coordinate the student teams, resources, and research needed to develop an assistive prototype.",
+      "responsibilities": [
+        "Coordinate mechanical design, electrical systems, controls, research, fabrication, testing, and safety. Manage design reviews, technical deliverables, purchasing, subsystem dependencies, and approximately $5,000 in development budget.",
+        "Guide a unilateral hip-and-knee assistance design using AK80-9 actuators, Teensy 4.1 controllers, Jetson Orin Nano, IMUs, and foot-contact sensing. Define requirements for joint alignment, power, sensing, human interfaces, and testing.",
+        "Use gait analysis, OpenSim comparisons, and MATLAB modeling to inform actuator sizing, assistance timing, torque targets, control strategy, and validation planning.",
+        "Organize workshops, recruitment, project demonstrations, technical meetings, and cross-team schedules. Coordinate career-fair and employer outreach, sponsor communication, and board-level events."
+      ],
+      "id": "ieee-leadership",
+      "projects": [
+        "exo-project",
+        "gbm"
+      ]
+    },
+    {
+      "date": "Mar 2025–Jan 2026",
+      "title": "Baker",
+      "org": "State Flour Bakery",
+      "description": "Produced baked goods at State Flour Bakery, with attention to consistent measurements, fermentation, temperature, and daily production timing.",
+      "responsibilities": [
+        "Measured ingredients precisely and followed the production process to keep batches repeatable.",
+        "Managed fermentation and temperature control during preparation and baking, paying attention to the conditions that affect product consistency.",
+        "Operated bakery equipment and coordinated daily production tasks with the team.",
+        "Maintained sanitation and an organized workspace throughout production."
+      ],
+      "id": "baker",
+      "projects": []
+    },
+    {
+      "date": "Sep 2024–Mar 2025",
+      "title": "Line Cook",
+      "org": "Next Level Brands Hospitality · Tampa, Florida",
+      "description": "Prepared seasonal, locally sourced dishes in a New American kitchen while keeping prep, plating, and service consistent.",
+      "responsibilities": [
+        "Cooked under the chef’s direction, checking ingredient freshness, food quality, and portions throughout preparation and service.",
+        "Organized daily mise en place and prepared components ahead of service so the station was ready when orders arrived.",
+        "Applied modern plating techniques consistent with the menu and coordinated with the kitchen team to keep service running smoothly.",
+        "Maintained a clean, organized workstation, followed food-safety and sanitation standards, and adapted to menu changes and new techniques during busy service."
+      ],
+      "id": "line-cook",
+      "projects": []
+    }
+  ],
+  "models": [
+    {
+      "name": "chassis",
+      "url": "assets/models/chassis.stl"
+    },
+    {
+      "name": "battery cartridge",
+      "url": "assets/models/battery_cartridge.stl"
+    },
+    {
+      "name": "battery cover",
+      "url": "assets/models/battery_cover.stl"
+    },
+    {
+      "name": "boot button",
+      "url": "assets/models/boot_button.stl"
+    },
+    {
+      "name": "electronics cover",
+      "url": "assets/models/electronics_cover.stl"
+    },
+    {
+      "name": "reset button",
+      "url": "assets/models/reset_button.stl"
+    }
+  ],
+  "archive": [
+    {
+      "name": "altium-pcb-basic-design-certificate.pdf",
+      "url": "assets/originals/altium-pcb-basic-design-certificate.pdf",
+      "bytes": 700921,
+      "kind": "Document"
+    },
+    {
+      "name": "bulls-1.webp",
+      "url": "assets/originals/bulls-1.webp",
+      "bytes": 8656,
+      "kind": "Project media"
+    },
+    {
+      "name": "bulls-2.webp",
+      "url": "assets/originals/bulls-2.webp",
+      "bytes": 10794,
+      "kind": "Project media"
+    },
+    {
+      "name": "bulls-icecream-robot.png",
+      "url": "assets/originals/bulls-icecream-robot.png",
+      "bytes": 135818,
+      "kind": "Project media"
+    },
+    {
+      "name": "bullsicecream.png",
+      "url": "assets/originals/bullsicecream.png",
+      "bytes": 135818,
+      "kind": "Project media"
+    },
+    {
+      "name": "citi-biomedical-investigators.pdf",
+      "url": "assets/originals/citi-biomedical-investigators.pdf",
+      "bytes": 138501,
+      "kind": "Document"
+    },
+    {
+      "name": "citi-biomedical-pi.pdf",
+      "url": "assets/originals/citi-biomedical-pi.pdf",
+      "bytes": 138011,
+      "kind": "Document"
+    },
+    {
+      "name": "citi-research-integrity.pdf",
+      "url": "assets/originals/citi-research-integrity.pdf",
+      "bytes": 138218,
+      "kind": "Document"
+    },
+    {
+      "name": "cswa-cad-design.pdf",
+      "url": "assets/originals/cswa-cad-design.pdf",
+      "bytes": 446248,
+      "kind": "Document"
+    },
+    {
+      "name": "cswa-sustainability.pdf",
+      "url": "assets/originals/cswa-sustainability.pdf",
+      "bytes": 445855,
+      "kind": "Document"
+    },
+    {
+      "name": "electronics-foundations.pdf",
+      "url": "assets/originals/electronics-foundations.pdf",
+      "bytes": 88480,
+      "kind": "Document"
+    },
+    {
+      "name": "gbm-gbm-exo-table.png",
+      "url": "assets/originals/gbm-gbm-exo-table.png",
+      "bytes": 2224591,
+      "kind": "Project media"
+    },
+    {
+      "name": "gbm-gbm-hall-of-flags.png",
+      "url": "assets/originals/gbm-gbm-hall-of-flags.png",
+      "bytes": 2625903,
+      "kind": "Project media"
+    },
+    {
+      "name": "gbm-gbm-project-discussion.png",
+      "url": "assets/originals/gbm-gbm-project-discussion.png",
+      "bytes": 1341674,
+      "kind": "Project media"
+    },
+    {
+      "name": "gustavo-headshot-horizontal.webp",
+      "url": "assets/originals/gustavo-headshot-horizontal.webp",
+      "bytes": 98648,
+      "kind": "Project media"
+    },
+    {
+      "name": "gustavo-headshot-vertical.webp",
+      "url": "assets/originals/gustavo-headshot-vertical.webp",
+      "bytes": 59364,
+      "kind": "Project media"
+    },
+    {
+      "name": "Gustavo_Rodriguez_Engineering.pdf",
+      "url": "assets/originals/Gustavo_Rodriguez_Engineering.pdf",
+      "bytes": 94509,
+      "kind": "Document"
+    },
+    {
+      "name": "Gustavo_Rodriguez_IEEE.pdf",
+      "url": "assets/originals/Gustavo_Rodriguez_IEEE.pdf",
+      "bytes": 103992,
+      "kind": "Document"
+    },
+    {
+      "name": "Gustavo_Rodriguez_IEEE.tex",
+      "url": "assets/originals/Gustavo_Rodriguez_IEEE.tex",
+      "bytes": 5323,
+      "kind": "Document"
+    },
+    {
+      "name": "hundreds-of-beavers.png",
+      "url": "assets/originals/hundreds-of-beavers.png",
+      "bytes": 55851,
+      "kind": "Film"
+    },
+    {
+      "name": "img-000.png",
+      "url": "assets/originals/img-000.png",
+      "bytes": 260848,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-001.png",
+      "url": "assets/originals/img-001.png",
+      "bytes": 158221,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-002.png",
+      "url": "assets/originals/img-002.png",
+      "bytes": 145677,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-003.png",
+      "url": "assets/originals/img-003.png",
+      "bytes": 199919,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-004.png",
+      "url": "assets/originals/img-004.png",
+      "bytes": 128015,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-005.png",
+      "url": "assets/originals/img-005.png",
+      "bytes": 31883,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-006.png",
+      "url": "assets/originals/img-006.png",
+      "bytes": 23198,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-007.png",
+      "url": "assets/originals/img-007.png",
+      "bytes": 80029,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-008.png",
+      "url": "assets/originals/img-008.png",
+      "bytes": 97217,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-009.png",
+      "url": "assets/originals/img-009.png",
+      "bytes": 57463,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-010.png",
+      "url": "assets/originals/img-010.png",
+      "bytes": 32192,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-011.png",
+      "url": "assets/originals/img-011.png",
+      "bytes": 30000,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-012.png",
+      "url": "assets/originals/img-012.png",
+      "bytes": 17000,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-013.png",
+      "url": "assets/originals/img-013.png",
+      "bytes": 31067,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-014.png",
+      "url": "assets/originals/img-014.png",
+      "bytes": 82358,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-015.png",
+      "url": "assets/originals/img-015.png",
+      "bytes": 28075,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-016.png",
+      "url": "assets/originals/img-016.png",
+      "bytes": 61010,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-017.png",
+      "url": "assets/originals/img-017.png",
+      "bytes": 36011,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-018.png",
+      "url": "assets/originals/img-018.png",
+      "bytes": 234128,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-019.png",
+      "url": "assets/originals/img-019.png",
+      "bytes": 193079,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-020.png",
+      "url": "assets/originals/img-020.png",
+      "bytes": 388326,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-022.png",
+      "url": "assets/originals/img-022.png",
+      "bytes": 252632,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-023.png",
+      "url": "assets/originals/img-023.png",
+      "bytes": 97172,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-024.png",
+      "url": "assets/originals/img-024.png",
+      "bytes": 237422,
+      "kind": "Project media"
+    },
+    {
+      "name": "img-025.png",
+      "url": "assets/originals/img-025.png",
+      "bytes": 261249,
+      "kind": "Project media"
+    },
+    {
+      "name": "locomotive-1.jpg",
+      "url": "assets/originals/locomotive-1.jpg",
+      "bytes": 49691,
+      "kind": "Project media"
+    },
+    {
+      "name": "locomotive-2.png",
+      "url": "assets/originals/locomotive-2.png",
+      "bytes": 158221,
+      "kind": "Project media"
+    },
+    {
+      "name": "locomotive-3.png",
+      "url": "assets/originals/locomotive-3.png",
+      "bytes": 128015,
+      "kind": "Project media"
+    },
+    {
+      "name": "lonza-equipment-01.jpg",
+      "url": "assets/originals/lonza-equipment-01.jpg",
+      "bytes": 378824,
+      "kind": "Project media"
+    },
+    {
+      "name": "lonza-equipment-02.jpg",
+      "url": "assets/originals/lonza-equipment-02.jpg",
+      "bytes": 567860,
+      "kind": "Project media"
+    },
+    {
+      "name": "lonza-equipment-03.jpg",
+      "url": "assets/originals/lonza-equipment-03.jpg",
+      "bytes": 452052,
+      "kind": "Project media"
+    },
+    {
+      "name": "lonza-equipment-04.jpg",
+      "url": "assets/originals/lonza-equipment-04.jpg",
+      "bytes": 331797,
+      "kind": "Project media"
+    },
+    {
+      "name": "lonza-equipment-05.jpg",
+      "url": "assets/originals/lonza-equipment-05.jpg",
+      "bytes": 479254,
+      "kind": "Project media"
+    },
+    {
+      "name": "magnolia.png",
+      "url": "assets/originals/magnolia.png",
+      "bytes": 39383,
+      "kind": "Film"
+    },
+    {
+      "name": "mime-mime-access-screen.png",
+      "url": "assets/originals/mime-mime-access-screen.png",
+      "bytes": 376482,
+      "kind": "Project media"
+    },
+    {
+      "name": "mime-mime-closed-hand.png",
+      "url": "assets/originals/mime-mime-closed-hand.png",
+      "bytes": 377774,
+      "kind": "Project media"
+    },
+    {
+      "name": "mime-mime-control-menu.png",
+      "url": "assets/originals/mime-mime-control-menu.png",
+      "bytes": 242506,
+      "kind": "Project media"
+    },
+    {
+      "name": "mime-mime-open-hand.png",
+      "url": "assets/originals/mime-mime-open-hand.png",
+      "bytes": 460414,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-1.jpg",
+      "url": "assets/originals/shape-fight-1.jpg",
+      "bytes": 18724,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184527.png",
+      "url": "assets/originals/shape-fight-shape-184527.png",
+      "bytes": 9450,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184532.png",
+      "url": "assets/originals/shape-fight-shape-184532.png",
+      "bytes": 9564,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184555.png",
+      "url": "assets/originals/shape-fight-shape-184555.png",
+      "bytes": 14355,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184612.png",
+      "url": "assets/originals/shape-fight-shape-184612.png",
+      "bytes": 13475,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184659.png",
+      "url": "assets/originals/shape-fight-shape-184659.png",
+      "bytes": 105311,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184708.png",
+      "url": "assets/originals/shape-fight-shape-184708.png",
+      "bytes": 75360,
+      "kind": "Project media"
+    },
+    {
+      "name": "shape-fight-shape-184745.png",
+      "url": "assets/originals/shape-fight-shape-184745.png",
+      "bytes": 5293,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-controls-questions-screen.png",
+      "url": "assets/originals/smurf-controls-questions-screen.png",
+      "bytes": 132997,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-email-new-request.png",
+      "url": "assets/originals/smurf-email-new-request.png",
+      "bytes": 68371,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-email-reminder.png",
+      "url": "assets/originals/smurf-email-reminder.png",
+      "bytes": 64870,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-flow-recurrence-reminders.png",
+      "url": "assets/originals/smurf-flow-recurrence-reminders.png",
+      "bytes": 43429,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-flow-request-created-routing.png",
+      "url": "assets/originals/smurf-flow-request-created-routing.png",
+      "bytes": 73701,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-flow-same-shift-and-not-immediate-reminders.png",
+      "url": "assets/originals/smurf-flow-same-shift-and-not-immediate-reminders.png",
+      "bytes": 47078,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-flow-status-sync-to-excel.png",
+      "url": "assets/originals/smurf-flow-status-sync-to-excel.png",
+      "bytes": 54612,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-general-assessment-screen.png",
+      "url": "assets/originals/smurf-general-assessment-screen.png",
+      "bytes": 70854,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-maintenance-detail-screen.png",
+      "url": "assets/originals/smurf-maintenance-detail-screen.png",
+      "bytes": 74580,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-maintenance-list-screen.png",
+      "url": "assets/originals/smurf-maintenance-list-screen.png",
+      "bytes": 36674,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-request-details-screen.png",
+      "url": "assets/originals/smurf-request-details-screen.png",
+      "bytes": 78265,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-review-submit-screen.png",
+      "url": "assets/originals/smurf-review-submit-screen.png",
+      "bytes": 71681,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-system-process-flow.png",
+      "url": "assets/originals/smurf-system-process-flow.png",
+      "bytes": 1565475,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-thank-you-screen.png",
+      "url": "assets/originals/smurf-thank-you-screen.png",
+      "bytes": 46328,
+      "kind": "Project media"
+    },
+    {
+      "name": "smurf-urgency-decision-map.png",
+      "url": "assets/originals/smurf-urgency-decision-map.png",
+      "bytes": 288363,
+      "kind": "Project media"
+    },
+    {
+      "name": "SMURFFinal.png",
+      "url": "assets/originals/SMURFFinal.png",
+      "bytes": 78265,
+      "kind": "Project media"
+    },
+    {
+      "name": "SMURF_SOP.docx",
+      "url": "assets/originals/SMURF_SOP.docx",
+      "bytes": 37725,
+      "kind": "Document"
+    },
+    {
+      "name": "sourdoughstateflour.jpg",
+      "url": "assets/originals/sourdoughstateflour.jpg",
+      "bytes": 49935,
+      "kind": "Project media"
+    },
+    {
+      "name": "speed-racer.png",
+      "url": "assets/originals/speed-racer.png",
+      "bytes": 52171,
+      "kind": "Film"
+    },
+    {
+      "name": "state-flour-sourdough.webp",
+      "url": "assets/originals/state-flour-sourdough.webp",
+      "bytes": 32314,
+      "kind": "Project media"
+    },
+    {
+      "name": "steam-locomotive-cad-project.pdf",
+      "url": "assets/originals/steam-locomotive-cad-project.pdf",
+      "bytes": 1508070,
+      "kind": "Document"
+    },
+    {
+      "name": "trainspotting.png",
+      "url": "assets/originals/trainspotting.png",
+      "bytes": 40723,
+      "kind": "Film"
+    },
+    {
+      "name": "ultimate-shape-fight.pdf",
+      "url": "assets/originals/ultimate-shape-fight.pdf",
+      "bytes": 117658,
+      "kind": "Document"
+    },
+    {
+      "name": "webhostbullsicecream.jpg",
+      "url": "assets/originals/webhostbullsicecream.jpg",
+      "bytes": 19848,
+      "kind": "Project media"
+    },
+    {
+      "name": "work-exo-gbm-photo-v59.png",
+      "url": "assets/originals/work-exo-gbm-photo-v59.png",
+      "bytes": 2224591,
+      "kind": "Project media"
+    },
+    {
+      "name": "XD600s_Asset_Numbers_Only_Redacted.pdf",
+      "url": "assets/originals/XD600s_Asset_Numbers_Only_Redacted.pdf",
+      "bytes": 487194,
+      "kind": "Document"
+    },
+    {
+      "name": "XD600s_Asset_Numbers_Only_Redacted.pptx",
+      "url": "assets/originals/XD600s_Asset_Numbers_Only_Redacted.pptx",
+      "bytes": 1715828,
+      "kind": "Document"
+    },
+    {
+      "name": "engineering-resume-current.pdf",
+      "url": "assets/originals/engineering-resume-current.pdf",
+      "bytes": 98012,
+      "kind": "Document"
+    },
+    {
+      "name": "R7 / battery_cartridge.stl",
+      "url": "assets/models/battery_cartridge.stl",
+      "bytes": 517884,
+      "kind": "CAD export"
+    },
+    {
+      "name": "R7 / battery_cover.stl",
+      "url": "assets/models/battery_cover.stl",
+      "bytes": 161484,
+      "kind": "CAD export"
+    },
+    {
+      "name": "R7 / boot_button.stl",
+      "url": "assets/models/boot_button.stl",
+      "bytes": 635884,
+      "kind": "CAD export"
+    },
+    {
+      "name": "R7 / chassis.stl",
+      "url": "assets/models/chassis.stl",
+      "bytes": 2241484,
+      "kind": "CAD export"
+    },
+    {
+      "name": "R7 / electronics_cover.stl",
+      "url": "assets/models/electronics_cover.stl",
+      "bytes": 736684,
+      "kind": "CAD export"
+    },
+    {
+      "name": "R7 / reset_button.stl",
+      "url": "assets/models/reset_button.stl",
+      "bytes": 635884,
+      "kind": "CAD export"
+    },
+    {
+      "name": "recf-pre-engineering.pdf",
+      "url": "assets/originals/recf-pre-engineering.pdf",
+      "bytes": 351472,
+      "kind": "Document"
+    },
+    {
+      "name": "recf-robotics.pdf",
+      "url": "assets/originals/recf-robotics.pdf",
+      "bytes": 352644,
+      "kind": "Document"
+    },
+    {
+      "name": "ultimate-shape-fight-source.m",
+      "url": "assets/originals/ultimate-shape-fight-source.m",
+      "bytes": 21346,
+      "kind": "Document"
+    },
+    {
+      "name": "carrt-r7-complete-assembly.stl",
+      "url": "assets/assemblies/carrt-r7.stl",
+      "bytes": 2491884,
+      "kind": "Complete assembly"
+    },
+    {
+      "name": "carrt-solidworks-exploded.webp",
+      "url": "assets/images/carrt-r9-exploded.png",
+      "kind": "Project media",
+      "bytes": 43194
+    },
+    {
+      "name": "assembly.webp",
+      "url": "assets/images/spoon/assembly.webp",
+      "kind": "Project media",
+      "bytes": 22676
+    },
+    {
+      "name": "side.webp",
+      "url": "assets/images/spoon/side.webp",
+      "kind": "Project media",
+      "bytes": 13028
+    },
+    {
+      "name": "carrier.webp",
+      "url": "assets/images/spoon/carrier.webp",
+      "kind": "Project media",
+      "bytes": 16370
+    },
+    {
+      "name": "grip.webp",
+      "url": "assets/images/spoon/grip.webp",
+      "kind": "Project media",
+      "bytes": 14932
+    },
+    {
+      "name": "PID_Spoon_Assembly.STEP",
+      "url": "assets/originals/spoon/PID_Spoon_Assembly.STEP",
+      "kind": "CAD",
+      "bytes": 4384714
+    }
+  ],
+  "images": {
+    "bulls-1.webp": "assets/images/bulls-1.webp",
+    "bulls-2.webp": "assets/images/bulls-2.webp",
+    "bulls-icecream-robot.png": "assets/images/bulls-icecream-robot.webp",
+    "bullsicecream.png": "assets/images/bullsicecream.webp",
+    "gbm-gbm-exo-table.png": "assets/images/gbm-gbm-exo-table.webp",
+    "gbm-gbm-hall-of-flags.png": "assets/images/gbm-gbm-hall-of-flags.webp",
+    "gbm-gbm-project-discussion.png": "assets/images/gbm-gbm-project-discussion.webp",
+    "gustavo-headshot-horizontal.webp": "assets/images/gustavo-headshot-horizontal.webp",
+    "gustavo-headshot-vertical.webp": "assets/images/gustavo-headshot-vertical.webp",
+    "hundreds-of-beavers.png": "assets/images/hundreds-of-beavers.webp",
+    "img-000.png": "assets/images/img-000.webp",
+    "img-001.png": "assets/images/img-001.webp",
+    "img-002.png": "assets/images/img-002.webp",
+    "img-003.png": "assets/images/img-003.webp",
+    "img-004.png": "assets/images/img-004.webp",
+    "img-005.png": "assets/images/img-005.webp",
+    "img-006.png": "assets/images/img-006.webp",
+    "img-007.png": "assets/images/img-007.webp",
+    "img-008.png": "assets/images/img-008.webp",
+    "img-009.png": "assets/images/img-009.webp",
+    "img-010.png": "assets/images/img-010.webp",
+    "img-011.png": "assets/images/img-011.webp",
+    "img-012.png": "assets/images/img-012.webp",
+    "img-013.png": "assets/images/img-013.webp",
+    "img-014.png": "assets/images/img-014.webp",
+    "img-015.png": "assets/images/img-015.webp",
+    "img-016.png": "assets/images/img-016.webp",
+    "img-017.png": "assets/images/img-017.webp",
+    "img-018.png": "assets/images/img-018.webp",
+    "img-019.png": "assets/images/img-019.webp",
+    "img-020.png": "assets/images/img-020.webp",
+    "img-022.png": "assets/images/img-022.webp",
+    "img-023.png": "assets/images/img-023.webp",
+    "img-024.png": "assets/images/img-024.webp",
+    "img-025.png": "assets/images/img-025.webp",
+    "locomotive-1.jpg": "assets/images/locomotive-1.webp",
+    "locomotive-2.png": "assets/images/locomotive-2.webp",
+    "locomotive-3.png": "assets/images/locomotive-3.webp",
+    "lonza-equipment-01.jpg": "assets/images/lonza-equipment-01.webp",
+    "lonza-equipment-02.jpg": "assets/images/lonza-equipment-02.webp",
+    "lonza-equipment-03.jpg": "assets/images/lonza-equipment-03.webp",
+    "lonza-equipment-04.jpg": "assets/images/lonza-equipment-04.webp",
+    "lonza-equipment-05.jpg": "assets/images/lonza-equipment-05.webp",
+    "magnolia.png": "assets/images/magnolia.webp",
+    "mime-mime-access-screen.png": "assets/images/mime-mime-access-screen.webp",
+    "mime-mime-closed-hand.png": "assets/images/mime-mime-closed-hand.webp",
+    "mime-mime-control-menu.png": "assets/images/mime-mime-control-menu.webp",
+    "mime-mime-open-hand.png": "assets/images/mime-mime-open-hand.webp",
+    "shape-fight-1.jpg": "assets/images/shape-fight-1.webp",
+    "shape-fight-shape-184527.png": "assets/images/shape-fight-shape-184527.webp",
+    "shape-fight-shape-184532.png": "assets/images/shape-fight-shape-184532.webp",
+    "shape-fight-shape-184555.png": "assets/images/shape-fight-shape-184555.webp",
+    "shape-fight-shape-184612.png": "assets/images/shape-fight-shape-184612.webp",
+    "shape-fight-shape-184659.png": "assets/images/shape-fight-shape-184659.webp",
+    "shape-fight-shape-184708.png": "assets/images/shape-fight-shape-184708.webp",
+    "shape-fight-shape-184745.png": "assets/images/shape-fight-shape-184745.webp",
+    "smurf-controls-questions-screen.png": "assets/images/smurf-controls-questions-screen.webp",
+    "smurf-email-new-request.png": "assets/images/smurf-email-new-request.webp",
+    "smurf-email-reminder.png": "assets/images/smurf-email-reminder.webp",
+    "smurf-flow-recurrence-reminders.png": "assets/images/smurf-flow-recurrence-reminders.webp",
+    "smurf-flow-request-created-routing.png": "assets/images/smurf-flow-request-created-routing.webp",
+    "smurf-flow-same-shift-and-not-immediate-reminders.png": "assets/images/smurf-flow-same-shift-and-not-immediate-reminders.webp",
+    "smurf-flow-status-sync-to-excel.png": "assets/images/smurf-flow-status-sync-to-excel.webp",
+    "smurf-general-assessment-screen.png": "assets/images/smurf-general-assessment-screen.webp",
+    "smurf-maintenance-detail-screen.png": "assets/images/smurf-maintenance-detail-screen.webp",
+    "smurf-maintenance-list-screen.png": "assets/images/smurf-maintenance-list-screen.webp",
+    "smurf-request-details-screen.png": "assets/images/smurf-request-details-screen.webp",
+    "smurf-review-submit-screen.png": "assets/images/smurf-review-submit-screen.webp",
+    "smurf-system-process-flow.png": "assets/images/smurf-system-process-flow.webp",
+    "smurf-thank-you-screen.png": "assets/images/smurf-thank-you-screen.webp",
+    "smurf-urgency-decision-map.png": "assets/images/smurf-urgency-decision-map.webp",
+    "SMURFFinal.png": "assets/images/SMURFFinal.webp",
+    "sourdoughstateflour.jpg": "assets/images/sourdoughstateflour.webp",
+    "speed-racer.png": "assets/images/speed-racer.webp",
+    "state-flour-sourdough.webp": "assets/images/state-flour-sourdough.webp",
+    "trainspotting.png": "assets/images/trainspotting.webp",
+    "webhostbullsicecream.jpg": "assets/images/webhostbullsicecream.webp",
+    "work-exo-gbm-photo-v59.png": "assets/images/work-exo-gbm-photo-v59.webp"
+  },
+  "assemblies": [
+    {
+      "id": "carrt-r9",
+      "name": "CARRT R9 · complete assembly",
+      "url": "assets/assemblies/carrt-r9.stl",
+      "metadata": "assets/assemblies/carrt-r9.json",
+      "poster": "assets/images/carrt-r9-exploded.png",
+      "rotation": [
+        -1.5707963267948966,
+        0,
+        0
+      ]
+    }
+  ],
+  "home": {
+    "projectLinks": [
+      "exo-project",
+      "carrt",
+      "pid-spoon",
+      "mime",
+      "trace",
+      "smurf",
+      "xcelodose",
+      "gait",
+      "locomotive",
+      "gbm"
+    ],
+    "featuredProject": "carrt",
+    "secondaryProject": "exo-project",
+    "thirdProject": "pid-spoon",
+    "spotlightProject": "mime",
+    "workProjects": [
+      "trace",
+      "smurf"
+    ],
+    "headline": "Mechanical Engineering Student",
+    "featuredLabel": "Research / SolidWorks",
+    "featuredTitle": "CARRT sensor",
+    "featuredCaption": "R9 enclosure for motion research.",
+    "secondaryCaption": "Lower-limb assistance: mechanics, sensing, and controls.",
+    "thirdCaption": "Two axes, an orthogonal servo carrier, and a compliant grip.",
+    "thirdNote": "Next steps: print, check hardware fit, and test PID control.",
+    "spotlightCaption": "Hand tracking and robotic hand control."
+  },
+  "aboutPage": {
+    "intro": "Mechanical Engineering Student at the University of South Florida.",
+    "personalNote": "I work across the lab, the workshop, and the manufacturing floor. Off the clock, there’s usually music playing and a film somewhere on the list.",
+    "tools": [
+      "SolidWorks / assembly modeling / FDM printing",
+      "Python / MATLAB / OpenSim",
+      "ESP32 / Arduino / Teensy / Jetson",
+      "Power Apps / Power Automate / SharePoint / Excel",
+      "Altium / schematic capture / PCB design",
+      "Lean manufacturing / 5S workplace organization / GMP",
+      "RCA / FMEA / A3 / GDP",
+      "IMU / Vicon / motion analysis",
+      "English / Spanish"
+    ],
+    "credentials": "CSWA CAD Design · CSWA Sustainability · Lean Six Sigma Yellow Belt · ReCF Pre-Engineering & Robotics · CITI Biomedical / Research Integrity · Altium Education PCB Basic Design Course Certificate.",
+    "downloads": [
+      {
+        "title": "Altium PCB Design",
+        "url": "assets/originals/altium-pcb-basic-design-certificate.pdf"
+      },
+      {
+        "title": "CITI Biomedical Investigators",
+        "url": "assets/originals/citi-biomedical-investigators.pdf"
+      },
+      {
+        "title": "CITI Biomedical PI",
+        "url": "assets/originals/citi-biomedical-pi.pdf"
+      },
+      {
+        "title": "CITI Research Integrity",
+        "url": "assets/originals/citi-research-integrity.pdf"
+      },
+      {
+        "title": "CSWA CAD Design",
+        "url": "assets/originals/cswa-cad-design.pdf"
+      },
+      {
+        "title": "CSWA Sustainability",
+        "url": "assets/originals/cswa-sustainability.pdf"
+      }
+    ]
+  },
+  "education": [
+    {
+      "name": "University of South Florida",
+      "degree": "B.S. Mechanical Engineering",
+      "date": "Expected December 2028",
+      "gpa": "3.33",
+      "details": "Dynamics, Mechanics of Solids, Thermodynamics, Materials Engineering, Electrical Systems, CAD & Engineering.",
+      "honors": "Arthrex Scholar · USF Scholars Gold Recognition · Florida Academic Scholars"
+    },
+    {
+      "name": "Hillsborough Community College",
+      "degree": "Associate of Arts",
+      "date": "2022–2024",
+      "gpa": "3.8",
+      "details": "",
+      "honors": ""
+    },
+    {
+      "name": "Leto High School",
+      "degree": "",
+      "date": "2020–2024",
+      "gpa": "",
+      "details": "",
+      "honors": ""
+    }
+  ],
+  "appearance": {
+    "homeBackground": "assets/settings/helix-space.webp",
+    "projectsBackground": "assets/settings/metal.webp",
+    "workBackground": "assets/settings/factory-pipes.svg",
+    "engineeringBackground": "",
+    "researchBackground": "assets/settings/rock.webp",
+    "aboutBackground": "",
+    "musicBackground": ""
+  },
+  "pages": {
+    "Projects": {
+      "title": "Projects",
+      "description": "Experience, engineering, work, and research."
+    },
+    "Engineering": {
+      "title": "Engineering",
+      "description": "Mechanical design, robotics, electronics, software, and IEEE USF leadership."
+    },
+    "Work": {
+      "title": "Work",
+      "description": "Manufacturing projects, equipment reliability, TRACE, and SMURF."
+    },
+    "Research": {
+      "title": "Research",
+      "description": "EXO and CARRT."
+    },
+    "Music + Films": {
+      "title": "Music + Films",
+      "description": "Records, films, and my notes."
+    }
+  }
+}
